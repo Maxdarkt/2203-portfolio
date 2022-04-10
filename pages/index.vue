@@ -1,5 +1,5 @@
 <template>
-  <Tutorial/>
+  <HomeBanner/>
 </template>
 
 <script lang="ts">
