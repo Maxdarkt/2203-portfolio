@@ -1,25 +1,28 @@
 <template>
   <div id="home-banner" class="grid grid-cols-12 bg-[url('~/assets/images/background-MT.jpg')] bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover w-screen h-screen">
     <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center">
-      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center">
+      <p id="animate-text" class="hidden">
+        Quaerebatur Tyrii textrini prolatae quidam scriptae purpurae tuniculam Graeco est Maras nihil fucandae autem etiam.
+      </p>
+    </div>
+    <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center">
+      <img src="~/assets/images/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-80">
+      <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center mt-8">
         Tourneux Maxence
       </h1>
-      <h2 class="xs:text-lg sm:text-xl md:text-xl lg:text-2xl font-bold text-gray-200 mt-4 text-center">
+      <h2 class="xs:text-lg sm:text-xl md:text-xl lg:text-3xl font-bold text-gray-200 mt-8 text-center">
         Full stack developper
       </h2>
-    </div>
-    <div class="col-span-12 sm:col-span-6 flex justify-center items-center">
-      <img src="~/assets/images/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-96">
     </div>
     <div class="col-span-12 self-end text-white p-4 bg-black/70 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/90 sm:to-black/70">
       <h3 class="text-lg font-bold underline">
         Title
       </h3>
-      <p class="text-justify mt-4 pb-12">
+      <p class="text-justify mt-4 pb-14">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aliquid atque repellat molestiae recusandae voluptate ab accusantium quod. Dolorem dolores praesentium numquam reiciendis adipisci inventore mollitia optio. Quo, porro repellat.
       </p>
       <section id="scroll-button" class="demo">
-        <a href="#section08"><span></span><span></span><span></span></a>
+        <a href="#section08" @click="scrollTo"><span></span><span></span><span></span></a>
     </section>
     </div>
   </div>
@@ -33,6 +36,35 @@
     data() {
       return {
         message: 'Hello World !',
+      }
+    },
+    mounted() {
+      this.animateText() 
+    },
+    methods: {
+      animateText(): void {
+        const delay: number = 100
+        const delayStart: number = 0
+        let contents: string
+        let letters: string[]
+
+        const elem: any = document.querySelector("#animate-text") as HTMLElement
+        contents = elem.textContent.trim() // récupère le contenu (texte à traiter)
+        elem.textContent = "" // on vide le contenu
+        letters = contents.split("") // on sépare chaque caractère (lettre/ponctuation/espace)
+        elem.classList.remove('hidden') // on rend visible le conteneur
+    
+        letters.forEach(function (letter: string, index_1: number) { // pour chaque caractère
+          setTimeout(function () {
+            // ---------
+            // effet machine à écrire (SIMPLE)
+            elem.textContent += letter // affiche le caractère
+            // ---------
+          }, delayStart + delay * index_1) // index_1 vaut 0 à (letters.length-1)
+        })
+      },
+      scrollTo(): void {
+        console.log('scroll')
       }
     }
   })
