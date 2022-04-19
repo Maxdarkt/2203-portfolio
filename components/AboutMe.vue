@@ -1,5 +1,5 @@
 <template>
-  <div id="about-me" class="w-screen h-screen bg-gray-300">
+  <div id="about-me" class="w-screen h-screen bg-[#E5E5E5]">
     <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center pt-8">
         A propos de moi 
     </h1>

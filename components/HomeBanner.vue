@@ -68,7 +68,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aliquid atque repellat molestiae recusandae voluptate ab accusantium quod. Dolorem dolores praesentium numquam reiciendis adipisci inventore mollitia optio. Quo, porro repellat.
       </p>
       <p id="scroll-button" class="demo">
-        <a href="#" @click="scrollTo('about-me')"><span></span><span></span><span></span></a>
+        <a href="#" @click="scrollDown('about-me')"><span></span><span></span><span></span></a>
       </p>
     </div>
     <!-- End banner opacity -->
@@ -144,7 +144,7 @@
           elem.classList.add('opacity-100')
         },3500)
       },
-      scrollTo(id: string): void {
+      scrollDown(id: string): void {
         const element: HTMLElement = document.getElementById(id) as HTMLElement
         const height: number = element.getBoundingClientRect().top
         this.$emit('event-scroll-to', height)
