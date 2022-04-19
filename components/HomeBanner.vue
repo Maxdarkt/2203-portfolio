@@ -1,9 +1,11 @@
 <template>
-  <div id="home-banner" class="grid grid-cols-12 bg-[url('~/assets/images/background-MT.jpg')] bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover w-screen h-screen overflow-hidden">
+  <div id="home-banner" class="w-screen h-screen grid grid-cols-12 bg-[url('~/assets/images/background-MT.jpg')] bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover overflow-hidden">
+    <!-- Block left -->
     <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center">
       <p id="animate-text" class="hidden text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center">
         Je m'appelle Maxence !
       </p>
+      <!-- animation 1 -->
       <p id="animateText-2" class="xs:text-lg sm:text-xl md:text-xl lg:text-3xl font-bold text-gray-200 mt-8 text-center flex">
         <span class="w-fit position-0 position-1 transition duration-700">J</span>
         <span class="w-fit position-0 position-2 transition duration-700">e</span>
@@ -25,15 +27,28 @@
         <span class="w-fit position-0 position-1 transition duration-700">u</span>
         <span class="w-fit position-0 position-2 transition duration-700">r</span>
       </p>
+      <!-- End animation 1 -->
+      <!-- animation separator -->
       <p id="separator-banner" class="my-4">
         <img src="~/assets/images/separatorWhite.png" alt="separateur" class="opacity-0 transition duration-[2500ms] w-42">
       </p>
+      <!-- End animation separator -->
+      <!-- animation 3 logos -->
       <div class="flex justify-center items-center space-x-4">
-        <img src="~/assets/images/mail_white.png" alt="logo mail" class="position-0 position-3 transition duration-[1500ms]">
-        <img src="~/assets/images/github_white.png" alt="logo github" class="position-0 position-4 transition duration-[1500ms]">
-        <img src="~/assets/images/linkedin_white.png" alt="logo linkedin" class="position-0 position-3 transition duration-[1500ms]">
+        <a href="mailto:Maxdev74@gmail.com" class="transition duration-500 hover:rotate-[360deg]">
+          <img src="~/assets/images/mail_white.png" alt="logo mail" class="position-0 position-3 transition duration-[1500ms]">
+        </a>
+        <a href="https://github.com/Maxdarkt" target="_blank" class="transition duration-500 hover:rotate-[360deg]">
+          <img src="~/assets/images/github_white.png" alt="logo github" class="position-0 position-4 transition duration-[1500ms]">
+        </a>
+        <a href="https://www.linkedin.com/in/tourneux-maxence-6024615a/" target="_blank" class="transition duration-500 hover:rotate-[360deg]">
+          <img src="~/assets/images/linkedin_white.png" alt="logo linkedin" class="position-0 position-3 transition duration-[1500ms]">
+        </a>
       </div>
+      <!-- End animation 3 logos -->
     </div>
+    <!-- End Block left -->
+    <!-- Block right -->
     <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center">
       <img src="~/assets/images/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-80">
       <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center mt-8">
@@ -43,6 +58,8 @@
         Full stack developper
       </h2>
     </div>
+    <!-- End Block right -->
+    <!-- banner opacity -->
     <div class="col-span-12 self-end text-white p-4 bg-black/70 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/90 sm:to-black/70">
       <h3 class="text-lg font-bold underline">
         Title
@@ -50,10 +67,11 @@
       <p class="text-justify mt-4 pb-14">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aliquid atque repellat molestiae recusandae voluptate ab accusantium quod. Dolorem dolores praesentium numquam reiciendis adipisci inventore mollitia optio. Quo, porro repellat.
       </p>
-      <section id="scroll-button" class="demo">
-        <a href="#section08" @click="scrollTo"><span></span><span></span><span></span></a>
-    </section>
+      <p id="scroll-button" class="demo">
+        <a href="#" @click="scrollTo('about-me')"><span></span><span></span><span></span></a>
+      </p>
     </div>
+    <!-- End banner opacity -->
   </div>
 </template>
 
@@ -64,7 +82,6 @@
     name: 'HomeBanner',
     data() {
       return {
-        message: 'Hello World !',
       }
     },
     mounted() {
@@ -72,51 +89,66 @@
       this.animateText2()
     },
     methods: {
+      // 1/ First animation : typewriter
       animateText(): void {
+        // we define the timer
         const delay: number = 100
         const delayStart: number = 0
+        // we declare the variables
         let contents: string
         let letters: string[]
-
+        // we get DOM element
         const elem: any = document.querySelector("#animate-text") as HTMLElement
-        contents = elem.textContent.trim() // récupère le contenu (texte à traiter)
-        elem.textContent = "" // on vide le contenu
-        letters = contents.split("") // on sépare chaque caractère (lettre/ponctuation/espace)
-        elem.classList.remove('hidden') // on rend visible le conteneur
-    
-        letters.forEach(function (letter: string, index_1: number) { // pour chaque caractère
+        // retrieves the content of the paragraph
+        contents = elem.textContent.trim()
+        // empty the content
+        elem.textContent = ""
+        // separate each character
+        letters = contents.split("")
+        elem.classList.remove('hidden')
+        // For each character
+        letters.forEach(function (letter: string, index: number) {
           setTimeout(function () {
             // ---------
-            // effet machine à écrire (SIMPLE)
-            elem.textContent += letter // affiche le caractère
+            // simple typewriter effect
+            elem.textContent += letter // display the character
             // ---------
-          }, delayStart + delay * index_1) // index_1 vaut 0 à (letters.length-1)
+          }, delayStart + delay * index)
         })
       },
-      scrollTo(): void {
-        console.log('scroll')
-      },
+      // 2/ Second animation : display each letters (translate && rotate)
       animateText2(): void {
+        // we define the timer
         const delay: number = 75
         const delayStart: number = 1000
+        // we get DOM element
         const elem: NodeListOf<HTMLElement> = document.querySelectorAll('.position-0')
+        // For each letter or image
         elem.forEach((item: HTMLElement, index: number) => {
           setTimeout(() => {
-            console.log(item)
             item.classList.remove('position-1')
             item.classList.remove('position-2')
             item.classList.remove('position-3')
             item.classList.remove('position-4')
           }, delayStart + delay * index)
         })
+        // we launch the third animation
         this.displaySeparator()
       },
+      // 3/ Third animation : display the separator (opacity)
       displaySeparator(): void {
+        // we get DOM element
         const elem: HTMLElement = document.querySelector('#separator-banner img') as HTMLElement
+        // we display the separator
         setTimeout(() => {
           elem.classList.add('opacity-100')
         },3500)
-      }
+      },
+      scrollTo(id: string): void {
+        const element: HTMLElement = document.getElementById(id) as HTMLElement
+        const height: number = element.getBoundingClientRect().top
+        this.$emit('event-scroll-to', height)
+      },
     }
   })
 </script>
