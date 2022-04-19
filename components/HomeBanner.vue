@@ -1,9 +1,38 @@
 <template>
-  <div id="home-banner" class="grid grid-cols-12 bg-[url('~/assets/images/background-MT.jpg')] bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover w-screen h-screen">
+  <div id="home-banner" class="grid grid-cols-12 bg-[url('~/assets/images/background-MT.jpg')] bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover w-screen h-screen overflow-hidden">
     <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center">
-      <p id="animate-text" class="hidden">
-        Quaerebatur Tyrii textrini prolatae quidam scriptae purpurae tuniculam Graeco est Maras nihil fucandae autem etiam.
+      <p id="animate-text" class="hidden text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center">
+        Je m'appelle Maxence !
       </p>
+      <p id="animateText-2" class="xs:text-lg sm:text-xl md:text-xl lg:text-3xl font-bold text-gray-200 mt-8 text-center flex">
+        <span class="w-fit position-0 position-1 transition duration-700">J</span>
+        <span class="w-fit position-0 position-2 transition duration-700">e</span>
+        <span class="w-fit position-0 position-1 transition duration-700 ml-4">s</span>
+        <span class="w-fit position-0 position-2 transition duration-700">u</span>
+        <span class="w-fit position-0 position-1 transition duration-700">i</span>
+        <span class="w-fit position-0 position-2 transition duration-700">s</span>
+        <span class="w-fit position-0 position-1 transition duration-700 ml-4">u</span>
+        <span class="w-fit position-0 position-1 transition duration-700">n</span>
+        <span class="w-fit position-0 position-2 transition duration-700 ml-4">d</span>
+        <span class="w-fit position-0 position-1 transition duration-700">é</span>
+        <span class="w-fit position-0 position-2 transition duration-700">v</span>
+        <span class="w-fit position-0 position-1 transition duration-700">e</span>
+        <span class="w-fit position-0 position-2 transition duration-700">l</span>
+        <span class="w-fit position-0 position-1 transition duration-700">o</span>
+        <span class="w-fit position-0 position-2 transition duration-700">p</span>
+        <span class="w-fit position-0 position-1 transition duration-700">p</span>
+        <span class="w-fit position-0 position-2 transition duration-700">e</span>
+        <span class="w-fit position-0 position-1 transition duration-700">u</span>
+        <span class="w-fit position-0 position-2 transition duration-700">r</span>
+      </p>
+      <p id="separator-banner" class="my-4">
+        <img src="~/assets/images/separatorWhite.png" alt="separateur" class="opacity-0 transition duration-[2500ms] w-42">
+      </p>
+      <div class="flex justify-center items-center space-x-4">
+        <img src="~/assets/images/mail_white.png" alt="logo mail" class="position-0 position-3 transition duration-[1500ms]">
+        <img src="~/assets/images/github_white.png" alt="logo github" class="position-0 position-4 transition duration-[1500ms]">
+        <img src="~/assets/images/linkedin_white.png" alt="logo linkedin" class="position-0 position-3 transition duration-[1500ms]">
+      </div>
     </div>
     <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center">
       <img src="~/assets/images/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-80">
@@ -39,7 +68,8 @@
       }
     },
     mounted() {
-      this.animateText() 
+      this.animateText()
+      this.animateText2()
     },
     methods: {
       animateText(): void {
@@ -65,6 +95,27 @@
       },
       scrollTo(): void {
         console.log('scroll')
+      },
+      animateText2(): void {
+        const delay: number = 75
+        const delayStart: number = 1000
+        const elem: NodeListOf<HTMLElement> = document.querySelectorAll('.position-0')
+        elem.forEach((item: HTMLElement, index: number) => {
+          setTimeout(() => {
+            console.log(item)
+            item.classList.remove('position-1')
+            item.classList.remove('position-2')
+            item.classList.remove('position-3')
+            item.classList.remove('position-4')
+          }, delayStart + delay * index)
+        })
+        this.displaySeparator()
+      },
+      displaySeparator(): void {
+        const elem: HTMLElement = document.querySelector('#separator-banner img') as HTMLElement
+        setTimeout(() => {
+          elem.classList.add('opacity-100')
+        },3500)
       }
     }
   })
@@ -144,5 +195,27 @@
   100% {
     opacity: 0;
   }
+}
+
+/*---------text 2 ------------*/
+.position-0{
+  display: block;
+  transform: translate(0%, 0%) rotate(0deg);
+}
+
+.position-1{
+  transform: translate(100vw, 100vh);
+}
+
+.position-2{
+  transform: translate(100vw, -100vh);
+}
+
+.position-3{
+  transform: translate(100vw, 100vh) rotate(-3600deg);
+}
+
+.position-4{
+  transform: translate(100vw, -100vh) rotate(3600deg);
 }
 </style>
