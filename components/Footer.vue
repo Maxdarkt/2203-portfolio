@@ -1,5 +1,5 @@
 <template>
-  <div id="about-me" class="bg-black/95 flex flex-col justify-center items-center text-white pt-4">
+  <div id="about-me" class="bg-black/95 flex flex-col justify-center items-center text-white p-4">
   <div class="transition duration-500 hover:-translate-y-2 cursor-pointer" @click="scrollTop">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
       <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
@@ -22,7 +22,7 @@
         <img src="~/assets/images/linkedin_white.png" alt="logo linkedin">
       </a>
     </p>
-    <p class="text-xs text-center pb-4">
+    <p class="text-xs text-center">
       <strong>&#169;2022 Tourneux Maxence</strong> All Rights Reserved
     </p>
   </div>

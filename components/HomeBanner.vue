@@ -1,7 +1,7 @@
 <template>
   <div id="home-banner" class="w-screen h-screen grid grid-cols-12 bg-[url('~/assets/images/background-MT.jpg')] bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover overflow-hidden">
     <!-- Block left -->
-    <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center">
+    <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center p-4">
       <p id="animate-text" class="hidden text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center">
         Je m'appelle Maxence !
       </p>
@@ -13,8 +13,6 @@
         <span class="w-fit position-0 position-2 transition duration-700">u</span>
         <span class="w-fit position-0 position-1 transition duration-700">i</span>
         <span class="w-fit position-0 position-2 transition duration-700">s</span>
-        <span class="w-fit position-0 position-1 transition duration-700 ml-4">u</span>
-        <span class="w-fit position-0 position-1 transition duration-700">n</span>
         <span class="w-fit position-0 position-2 transition duration-700 ml-4">d</span>
         <span class="w-fit position-0 position-1 transition duration-700">é</span>
         <span class="w-fit position-0 position-2 transition duration-700">v</span>
@@ -26,13 +24,14 @@
         <span class="w-fit position-0 position-2 transition duration-700">e</span>
         <span class="w-fit position-0 position-1 transition duration-700">u</span>
         <span class="w-fit position-0 position-2 transition duration-700">r</span>
-      </p>
-      <!-- End animation 1 -->
+        <span class="w-fit position-0 position-2 transition duration-700 ml-4">w</span>
+        <span class="w-fit position-0 position-1 transition duration-700">e</span>
+        <span class="w-fit position-0 position-2 transition duration-700">b</span>
+      </p><!-- End animation 1 -->
       <!-- animation separator -->
       <p id="separator-banner" class="my-4">
         <img src="~/assets/images/separatorWhite.png" alt="separateur" class="opacity-0 transition duration-[2500ms] w-42">
-      </p>
-      <!-- End animation separator -->
+      </p><!-- End animation separator -->
       <!-- animation 3 logos -->
       <div class="flex justify-center items-center space-x-4">
         <a href="mailto:Maxdev74@gmail.com" class="transition duration-500 hover:rotate-[360deg]">
@@ -46,10 +45,9 @@
         </a>
       </div>
       <!-- End animation 3 logos -->
-    </div>
-    <!-- End Block left -->
+    </div><!-- End Block left -->
     <!-- Block right -->
-    <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center">
+    <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center p-4 pr-8">
       <img src="~/assets/images/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-80">
       <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center mt-8">
         Tourneux Maxence
@@ -57,21 +55,22 @@
       <h2 class="xs:text-lg sm:text-xl md:text-xl lg:text-3xl font-bold text-gray-200 mt-8 text-center">
         Full stack developper
       </h2>
-    </div>
-    <!-- End Block right -->
+    </div><!-- End Block right -->
     <!-- banner opacity -->
-    <div class="col-span-12 self-end text-white p-4 bg-black/70 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/90 sm:to-black/70">
-      <h3 class="text-lg font-bold underline">
-        Title
+    <div id="banner-description" class="col-span-12 self-end text-white p-4 pr-8 bg-black/70 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/90 sm:to-black/70 transition duration-[1500ms] translate-y-40">
+      <h3 class="text-lg font-bold underline underline-offset-4">
+        En savoir plus
       </h3>
-      <p class="text-justify mt-4 pb-14">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aliquid atque repellat molestiae recusandae voluptate ab accusantium quod. Dolorem dolores praesentium numquam reiciendis adipisci inventore mollitia optio. Quo, porro repellat.
+      <p class="text-justify mt-4">
+        <strong>En régie :</strong> Pour les professionnels qui recherchent la souplesse d'un support freelance pour renforcer ses équipes.
+      </p>
+      <p class="text-justify my-6">
+        <strong>Au forfait :</strong> Pour les clients qui recherchent la réalisation d'un projet bien défini.
       </p>
       <p id="scroll-button" class="demo">
         <a href="#" @click="scrollDown('about-me')"><span></span><span></span><span></span></a>
       </p>
-    </div>
-    <!-- End banner opacity -->
+    </div><!-- End banner opacity -->
   </div>
 </template>
 
@@ -134,6 +133,7 @@
         })
         // we launch the third animation
         this.displaySeparator()
+        this.displayBannerDescription()
       },
       // 3/ Third animation : display the separator (opacity)
       displaySeparator(): void {
@@ -149,6 +149,12 @@
         const height: number = element.getBoundingClientRect().top
         this.$emit('event-scroll-to', height)
       },
+      displayBannerDescription(): void {
+        setTimeout(() => {
+          const element = document.getElementById('banner-description') as HTMLElement
+          element.classList.remove('translate-y-40')
+        }, 1500)
+      }
     }
   })
 </script>
