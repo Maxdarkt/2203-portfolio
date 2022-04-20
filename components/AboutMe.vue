@@ -12,7 +12,7 @@
           <h2 class="text-lg md:text-xl text-center font-semibold mb-2">
             Design
           </h2>
-          <img src="~/assets/images/logo_design_bg.png" alt="logo design" class="px-12">
+          <img src="~/assets/images/aboutMe/logo_design_bg.png" alt="logo design" class="px-12">
         </div>
         <div class="col-span-9">
           <ul class="list-disc pl-8 space-y-2">
@@ -31,7 +31,7 @@
           <h2 class="text-lg md:text-xl text-center font-semibold mb-2">
             Développement
           </h2>
-          <img src="~/assets/images/logo_development.png" alt="logo development" class="px-8">
+          <img src="~/assets/images/aboutMe/logo_development.png" alt="logo development" class="px-8">
         </div>
         <div class="col-span-9">
           <p class="sm:text-lg font-semibold mb-2">
@@ -67,7 +67,7 @@
           <h2 class="text-lg md:text-xl text-center font-semibold mb-2">
             Maintenance
           </h2>
-          <img src="~/assets/images/logo_maintenance.png" alt="logo maintenance" class="px-12">
+          <img src="~/assets/images/aboutMe/logo_maintenance.png" alt="logo maintenance" class="px-12">
         </div>
         <div class="col-span-9">
           <ul class="list-disc pl-8 space-y-2">

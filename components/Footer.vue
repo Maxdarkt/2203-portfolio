@@ -13,13 +13,13 @@
     </p>
     <p class="flex space-x-4 my-4">
       <a href="mailto:Maxdev74@gmail.com" class="transition duration-500 hover:rotate-[360deg]">
-        <img src="~/assets/images/mail_white.png" alt="logo mail">
+        <img src="~/assets/images/socialNetworks/mail_white.png" alt="logo mail">
       </a>
       <a href="https://github.com/Maxdarkt" target="_blank" class="transition duration-500 hover:rotate-[360deg]">
-        <img src="~/assets/images/github_white.png" alt="logo github">
+        <img src="~/assets/images/socialNetworks/github_white.png" alt="logo github">
       </a>
       <a href="https://www.linkedin.com/in/tourneux-maxence-6024615a/" target="_blank" class="transition duration-500 hover:rotate-[360deg]">
-        <img src="~/assets/images/linkedin_white.png" alt="logo linkedin">
+        <img src="~/assets/images/socialNetworks/linkedin_white.png" alt="logo linkedin">
       </a>
     </p>
     <p class="text-xs text-center">

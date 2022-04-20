@@ -1,5 +1,5 @@
 <template>
-  <div id="home-banner" class="w-screen h-screen grid grid-cols-12 bg-[url('~/assets/images/background-MT.jpg')] bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover overflow-hidden">
+  <div id="home-banner" class="w-screen h-screen grid grid-cols-12 bg-[url('~/assets/images/banner/background-MT.jpg')] bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover overflow-hidden">
     <!-- Block left -->
     <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center p-4">
       <p id="animate-text" class="hidden text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center">
@@ -35,20 +35,20 @@
       <!-- animation 3 logos -->
       <div class="flex justify-center items-center space-x-4">
         <a href="mailto:Maxdev74@gmail.com" class="transition duration-500 hover:rotate-[360deg]">
-          <img src="~/assets/images/mail_white.png" alt="logo mail" class="position-0 position-3 transition duration-[1500ms]">
+          <img src="~/assets/images/socialNetworks/mail_white.png" alt="logo mail" class="position-0 position-3 transition duration-[1500ms]">
         </a>
         <a href="https://github.com/Maxdarkt" target="_blank" class="transition duration-500 hover:rotate-[360deg]">
-          <img src="~/assets/images/github_white.png" alt="logo github" class="position-0 position-4 transition duration-[1500ms]">
+          <img src="~/assets/images/socialNetworks/github_white.png" alt="logo github" class="position-0 position-4 transition duration-[1500ms]">
         </a>
         <a href="https://www.linkedin.com/in/tourneux-maxence-6024615a/" target="_blank" class="transition duration-500 hover:rotate-[360deg]">
-          <img src="~/assets/images/linkedin_white.png" alt="logo linkedin" class="position-0 position-3 transition duration-[1500ms]">
+          <img src="~/assets/images/socialNetworks/linkedin_white.png" alt="logo linkedin" class="position-0 position-3 transition duration-[1500ms]">
         </a>
       </div>
       <!-- End animation 3 logos -->
     </div><!-- End Block left -->
     <!-- Block right -->
     <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center p-4 pr-8">
-      <img src="~/assets/images/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-80">
+      <img src="~/assets/images/banner/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-80">
       <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center mt-8">
         Tourneux Maxence
       </h1>

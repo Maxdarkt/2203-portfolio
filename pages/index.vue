@@ -3,7 +3,8 @@
     <HomeBanner class="fixed top-0 left-0 z-0" @event-scroll-to="scrollTo"/>
     <div class="relative w-screen h-screen -z-10"></div>
     <AboutMe class="relative z-10"/>
-    <Footer class="relative z-10"@event-scroll-to="scrollTo"/>
+    <Skills class="relative z-10"/>
+    <Footer class="relative z-10" @event-scroll-to="scrollTo"/>
   </div>
 </template>
 
