@@ -4,6 +4,7 @@
     <div class="relative w-screen h-screen -z-10"></div>
     <AboutMe class="relative z-10"/>
     <Skills class="relative z-10"/>
+    <Portfolio class="relative z-10"/>
     <Footer class="relative z-10" @event-scroll-to="scrollTo"/>
   </div>
 </template>

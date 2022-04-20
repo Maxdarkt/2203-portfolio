@@ -1,32 +1,34 @@
 <template>
   <div id="home-banner" class="w-screen h-screen grid grid-cols-12 bg-[url('~/assets/images/banner/background-MT.jpg')] bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover overflow-hidden">
-    <!-- Block left -->
-    <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center p-4">
-      <p id="animate-text" class="hidden text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center">
-        Je m'appelle Maxence !
-      </p>
+    <!-- Block top -->
+    <div class="col-span-12 flex flex-col justify-end items-center p-4 pr-8">
+      <img src="~/assets/images/banner/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-80 ml-8">
+    </div><!-- End Block top -->
+    <!-- Block bottom -->
+    <div class="col-span-12 flex flex-col justify-start items-center p-4">
+      <h1 id="animate-text" class="hidden text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center">
+        Tourneux Maxence
+      </h1>
       <!-- animation 1 -->
       <p id="animateText-2" class="xs:text-lg sm:text-xl md:text-xl lg:text-3xl font-bold text-gray-200 mt-8 text-center flex">
-        <span class="w-fit position-0 position-1 transition duration-700">J</span>
-        <span class="w-fit position-0 position-2 transition duration-700">e</span>
-        <span class="w-fit position-0 position-1 transition duration-700 ml-4">s</span>
+        <span class="w-fit position-0 position-1 transition duration-700">F</span>
         <span class="w-fit position-0 position-2 transition duration-700">u</span>
-        <span class="w-fit position-0 position-1 transition duration-700">i</span>
-        <span class="w-fit position-0 position-2 transition duration-700">s</span>
+        <span class="w-fit position-0 position-2 transition duration-700">l</span>
+        <span class="w-fit position-0 position-2 transition duration-700">l</span>
+        <span class="w-fit position-0 position-1 transition duration-700 ml-4">s</span>
+        <span class="w-fit position-0 position-2 transition duration-700">t</span>
+        <span class="w-fit position-0 position-1 transition duration-700">a</span>
+        <span class="w-fit position-0 position-2 transition duration-700">c</span>
+        <span class="w-fit position-0 position-2 transition duration-700">k</span>
         <span class="w-fit position-0 position-2 transition duration-700 ml-4">d</span>
-        <span class="w-fit position-0 position-1 transition duration-700">é</span>
+        <span class="w-fit position-0 position-1 transition duration-700">e</span>
         <span class="w-fit position-0 position-2 transition duration-700">v</span>
         <span class="w-fit position-0 position-1 transition duration-700">e</span>
         <span class="w-fit position-0 position-2 transition duration-700">l</span>
         <span class="w-fit position-0 position-1 transition duration-700">o</span>
         <span class="w-fit position-0 position-2 transition duration-700">p</span>
-        <span class="w-fit position-0 position-1 transition duration-700">p</span>
         <span class="w-fit position-0 position-2 transition duration-700">e</span>
-        <span class="w-fit position-0 position-1 transition duration-700">u</span>
         <span class="w-fit position-0 position-2 transition duration-700">r</span>
-        <span class="w-fit position-0 position-2 transition duration-700 ml-4">w</span>
-        <span class="w-fit position-0 position-1 transition duration-700">e</span>
-        <span class="w-fit position-0 position-2 transition duration-700">b</span>
       </p><!-- End animation 1 -->
       <!-- animation separator -->
       <p id="separator-banner" class="my-4">
@@ -45,17 +47,7 @@
         </a>
       </div>
       <!-- End animation 3 logos -->
-    </div><!-- End Block left -->
-    <!-- Block right -->
-    <div class="col-span-12 sm:col-span-6 flex flex-col justify-center items-center p-4 pr-8">
-      <img src="~/assets/images/banner/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-80">
-      <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center mt-8">
-        Tourneux Maxence
-      </h1>
-      <h2 class="xs:text-lg sm:text-xl md:text-xl lg:text-3xl font-bold text-gray-200 mt-8 text-center">
-        Full stack developper
-      </h2>
-    </div><!-- End Block right -->
+    </div><!-- End Block bottom -->
     <!-- banner opacity -->
     <div id="banner-description" class="col-span-12 self-end text-white p-4 pr-8 bg-black/70 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/90 sm:to-black/70 transition duration-[1500ms] translate-y-40">
       <h3 class="text-lg font-bold underline underline-offset-4">
