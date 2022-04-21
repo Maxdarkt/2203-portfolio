@@ -1,9 +1,9 @@
 <template>
   <section id="portfolio" class="bg-[#E5E5E5] p-4">
-    <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-black text-center">
+    <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-black text-center">
         Portfolio
-    </h1>
-    <div class="border-b-4 border-black w-[35%] mx-auto my-8"></div>
+    </h2>
+    <div class="border-b-4 border-black w-[35%] mx-auto mt-8 mb-16"></div>
     <!-- contenair-max-width -->
     <div id="contenair-max-width" class="grid grid-cols-12 items-center lg:max-w-5xl mx-auto mt-8">
       <!-- portfolio head -->

@@ -50,9 +50,9 @@
     </div><!-- End Block bottom -->
     <!-- banner opacity -->
     <div id="banner-description" class="col-span-12 self-end text-white p-4 pr-8 bg-black/70 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/90 sm:to-black/70 transition duration-[1500ms] translate-y-40">
-      <h3 class="text-lg font-bold underline underline-offset-4">
+      <h2 class="text-lg font-bold underline underline-offset-4">
         En savoir plus
-      </h3>
+      </h2>
       <p class="text-justify mt-4">
         <strong>En régie :</strong> Pour les professionnels qui recherchent la souplesse d'un support freelance pour renforcer ses équipes.
       </p>
