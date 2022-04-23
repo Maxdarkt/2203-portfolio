@@ -3,3 +3,19 @@
 html{
   font-family: 'Open Sans', sans-serif;
 }
+
+.slide-animation-b-l{
+  @apply translate-y-40 -translate-x-[50%] opacity-0;
+}
+
+.slide-animation-b-r{
+  @apply translate-y-40 translate-x-[50%] opacity-0;
+}
+
+.display-animation-b-l{
+  @apply translate-y-20 -translate-x-10 opacity-0; 
+}
+
+.display-animation-b-r{
+  @apply translate-y-20 translate-x-10 opacity-0; 
+}

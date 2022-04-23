@@ -7,7 +7,7 @@
     <!-- contenair-max-width -->
     <div id="contenair-max-width" class="grid grid-cols-12 items-center lg:max-w-5xl mx-auto mt-8">
       <!-- card-1 -->
-      <div id="card-1" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8">
+      <div id="card-skills-1" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8 display-animation-b-l">
         <h4 class="col-span-12 text-lg md:text-xl font-semibold my-4">
           Les technologies utilisées :
         </h4>
@@ -158,7 +158,7 @@
       </div><!-- End card-1 -->
       <!-- -----/-----/----/-----/----/-----/-----/----/-----/----/-----/-----/----/-----/----/----- -->
       <!-- card-2 -->
-      <div id="card-2" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8">
+      <div id="card-skills-2" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8 display-animation-b-r">
         <h4 class="col-span-12 text-lg md:text-xl font-semibold my-4">
           Logiciels :
         </h4>
@@ -237,7 +237,7 @@
       </div><!-- End card-2 -->
       <!-- -----/-----/----/-----/----/-----/-----/----/-----/----/-----/-----/----/-----/----/----- -->
       <!-- card-3 -->
-      <div id="card-3" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8">
+      <div id="card-skills-3" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8 display-animation-b-l">
         <h4 class="col-span-12 text-lg md:text-xl font-semibold my-4">
           En cours d'apprentissage :
         </h4>
@@ -305,8 +305,36 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Skills',
+  mounted() {
+    this.displaySkills()
+  },
   methods: {
+    displaySkills(): void {
+      // we get three cards
+      const cardSkillsOne = document.getElementById('card-skills-1') as HTMLElement
+      const cardSkillsTwo = document.getElementById('card-skills-2') as HTMLElement
+      const cardSkillsThree = document.getElementById('card-skills-3') as HTMLElement
+      // we listen scroll event
+      window.addEventListener('scroll', () => {
 
+        const {scrollTop, clientHeight} = document.documentElement as HTMLElement
+
+        const topCardSkillsOneToTopViewport: number = cardSkillsOne.getBoundingClientRect().top
+        const topCardSkillsTwoToTopViewport: number = cardSkillsTwo.getBoundingClientRect().top
+        const topCardSkillsThreeToTopViewport: number = cardSkillsThree.getBoundingClientRect().top
+
+        // Launch animation
+        if(scrollTop > (scrollTop + topCardSkillsOneToTopViewport) - clientHeight * 0.8) {
+          cardSkillsOne.classList.remove('display-animation-b-l')
+        }
+        if(scrollTop > (scrollTop + topCardSkillsTwoToTopViewport) - clientHeight * 0.8) {
+          cardSkillsTwo.classList.remove('display-animation-b-r')
+        }
+        if(scrollTop > (scrollTop + topCardSkillsThreeToTopViewport) - clientHeight * 0.8) {
+          cardSkillsThree.classList.remove('display-animation-b-l')
+        }
+      })
+    }
   }
 })
 </script>

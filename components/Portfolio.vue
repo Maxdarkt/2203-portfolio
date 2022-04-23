@@ -4,8 +4,8 @@
         Portfolio
     </h2>
     <div class="border-b-4 border-black w-[35%] mx-auto mt-4 xs:mt-8 mb-8 xs:mb-16"></div>
-    <!-- contenair-max-width -->
-    <div id="contenair-max-width" class="grid grid-cols-12 items-center lg:max-w-5xl mx-auto mt-8">
+    <!-- contenair-portfolio -->
+    <div id="contenair-portfolio" class="grid grid-cols-12 items-center lg:max-w-5xl mx-auto mt-8 transition duration-500 display-animation-b-r">
       <!-- portfolio head -->
       <div class="col-span-12 bg-black/90 h-10 rounded-t-md flex justify-center items-center">
         <span class="bg-white/40 h-3 w-[95%] rounded-md shadow-inner">
@@ -41,7 +41,7 @@
           Mon portfolio
         </p>
       </div><!-- End portfolio footer -->
-    </div><!-- End contenair-max-width -->
+    </div><!-- End contenair-portfolio -->
   </section>  
 </template>
   
@@ -49,9 +49,27 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'Prtfolio',
+  name: 'Portfolio',
+  mounted() {
+    this.displayPortfolio()
+  },
   methods: {
+    displayPortfolio(): void {
+      // we get portfolio element
+      const portfolioElement = document.getElementById('contenair-portfolio') as HTMLElement
+      // we listen scroll event
+      window.addEventListener('scroll', () => {
 
+        const {scrollTop, clientHeight} = document.documentElement as HTMLElement
+
+        const topPortfolioElementOneToTopViewport: number = portfolioElement.getBoundingClientRect().top
+
+        // Launch animation
+        if(scrollTop > (scrollTop + topPortfolioElementOneToTopViewport) - clientHeight * 0.8) {
+          portfolioElement.classList.remove('display-animation-b-r')
+        }
+      })
+    }
   }
 })
 </script>

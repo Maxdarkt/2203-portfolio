@@ -4,8 +4,8 @@
         Contactez-moi
     </h2>
     <div class="border-b-4 border-black w-[35%] mx-auto my-4 xs:my-8"></div>
-    <!-- contenair-max-width -->
-    <div id="contenair-max-width" class="md:max-w-2xl mx-auto my-16">
+    <!-- contenair-contact -->
+    <div id="contenair-contact" class="md:max-w-2xl mx-auto my-16 transition duration-500 display-animation-b-l">
       <form class="rounded-lg bg-white shadow-lg transition duration-500 hover:shadow-2xl p-8">
         <div class="relative z-0 mb-8 w-full group">
           <input type="email" v-model="email" name="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
@@ -43,66 +43,85 @@
           {{ alertForm }}
         </div>
       </form>
-    </div><!-- End contenair-max-width -->
+    </div><!-- End contenair-contact -->
   </section>
 </template>
   
-  <script lang="ts">
-  import Vue from 'vue'
+<script lang="ts">
+import Vue from 'vue'
 
-  export default Vue.extend({
-    name: 'Contact',
-    data() {
-      return {
-        email: null,
-        firstName: null,
-        lastName: null,
-        mobile: null,
-        company: null,
-        message: null,
-        alertForm: ''
-      }
-    },
-    computed: {
-      validatefields(): boolean {
-        if(this.email && this.firstName && this.lastName && this.message) {
-          return true
-        }
-        return false
-      }
-    },
-    methods: {
-      sendEmail(): void {
-        if(!this.validatefields) {
-          return
-        }
-
-        this.$axios.$post('http://127.0.0.1/portfolio-api/api/contact/', {
-          email: this.email,
-          lastName: this.lastName,
-          firstName: this.firstName,
-          mobile: this.mobile,
-          company: this.company,
-          message: this.message
-        })
-        .then(response => {
-          console.log(response)
-          if(response.code === 200) {
-            this.alertForm = 'Le mail a bien été envoyé, je vous répondrai dans les plus bref délais.'
-            const element = document.getElementById('alert-form') as HTMLElement
-            element.classList.add('text-green-400')
-            element.classList.add('opacity-100')
-            const self: any = this
-            setTimeout(() => {
-              element.classList.remove('opacity-100')
-            }, 5000)
-            setTimeout(() => {
-              self.alertForm = ''
-              element.classList.remove('text-green-400')
-            }, 6000)
-          }
-        })
-      }
+export default Vue.extend({
+  name: 'Contact',
+  data() {
+    return {
+      email: null,
+      firstName: null,
+      lastName: null,
+      mobile: null,
+      company: null,
+      message: null,
+      alertForm: ''
     }
-  })
+  },
+  computed: {
+    validatefields(): boolean {
+      if(this.email && this.firstName && this.lastName && this.message) {
+        return true
+      }
+      return false
+    }
+  },
+  mounted() {
+    this.displayContact()
+  },
+  methods: {
+    displayContact(): void {
+      // we get portfolio element
+      const contactElement = document.getElementById('contenair-contact') as HTMLElement
+      // we listen scroll event
+      window.addEventListener('scroll', () => {
+
+        const {scrollTop, clientHeight} = document.documentElement as HTMLElement
+
+        const topcontactElementOneToTopViewport: number = contactElement.getBoundingClientRect().top
+
+        // Launch animation
+        if(scrollTop > (scrollTop + topcontactElementOneToTopViewport) - clientHeight * 0.8) {
+          contactElement.classList.remove('display-animation-b-l')
+        }
+      })
+    },
+    sendEmail(): void {
+      if(!this.validatefields) {
+        return
+      }
+
+      this.$axios.$post('http://127.0.0.1/portfolio-api/api/contact/', {
+        email: this.email,
+        lastName: this.lastName,
+        firstName: this.firstName,
+        mobile: this.mobile,
+        company: this.company,
+        message: this.message
+      })
+      .then(response => {
+        console.log(response)
+        if(response.code === 200) {
+          this.alertForm = 'Le mail a bien été envoyé, je vous répondrai dans les plus bref délais.'
+          const element = document.getElementById('alert-form') as HTMLElement
+          element.classList.add('text-green-400')
+          element.classList.add('opacity-100')
+          const self: any = this
+          setTimeout(() => {
+            element.classList.remove('opacity-100')
+          }, 5000)
+          setTimeout(() => {
+            self.alertForm = ''
+            element.classList.remove('text-green-400')
+          }, 6000)
+        }
+      })
+    }
+  }
+})
 </script>

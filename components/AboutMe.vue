@@ -7,12 +7,12 @@
     <!-- contenair-max-width -->
     <div id="contenair-max-width" class="grid grid-cols-12 items-center lg:max-w-5xl mx-auto mt-4 xs:mt-8">
       <!-- card-1 -->
-      <div id="card-1" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8">
+      <div id="card-about-me-1" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8 display-animation-b-l">
         <div class="col-span-12 sm:col-span-3 flex flex-col justify-center items-center text-center p-4">
           <h3 class="text-lg md:text-xl text-center font-semibold mb-2">
             Design
           </h3>
-          <img src="~/assets/images/aboutMe/logo_design_bg.png" alt="logo design" class="w-40">
+          <img src="~/assets/images/aboutMe/logo_design_bg.png" alt="logo design" class="w-40 sm:w-28">
         </div>
         <div class="col-span-12 sm:col-span-9">
           <ul class="list-disc pl-8 space-y-2">
@@ -26,12 +26,12 @@
         </div>
       </div><!-- End card-1 -->
       <!-- card-2 -->
-      <div id="card-2" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8">
+      <div id="card-about-me-2" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8 display-animation-b-r">
         <div class="col-span-12 sm:col-span-3 flex flex-col justify-center items-center text-center p-4">
           <h3 class="text-lg md:text-xl text-center font-semibold mb-2">
             Développement
           </h3>
-          <img src="~/assets/images/aboutMe/logo_development.png" alt="logo development" class="w-40">
+          <img src="~/assets/images/aboutMe/logo_development.png" alt="logo development" class="w-40 sm:w-28">
         </div>
         <div class="col-span-12 sm:col-span-9">
           <p class="sm:text-lg font-semibold mb-2">
@@ -62,12 +62,12 @@
         </div>
       </div><!-- End card-2 -->
       <!-- card-3 -->
-      <div id="card-3" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8">
+      <div id="card-about-me-3" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8 display-animation-b-l">
         <div class="col-span-12 sm:col-span-3 flex flex-col justify-center items-center text-center p-4">
           <h3 class="text-lg md:text-xl text-center font-semibold mb-2">
             Maintenance
           </h3>
-          <img src="~/assets/images/aboutMe/logo_maintenance.png" alt="logo maintenance" class="w-40">
+          <img src="~/assets/images/aboutMe/logo_maintenance.png" alt="logo maintenance" class="w-40 sm:w-28">
         </div>
         <div class="col-span-12 sm:col-span-9">
           <ul class="list-disc pl-8 space-y-2">
@@ -84,11 +84,42 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
   name: 'AboutMe',
+  mounted() {
+    this.displayAboutMe()
+  },
+  methods: {
+    displayAboutMe(): void {
+      // we get three cards
+      const cardOne = document.getElementById('card-about-me-1') as HTMLElement
+      const cardTwo = document.getElementById('card-about-me-2') as HTMLElement
+      const cardThree = document.getElementById('card-about-me-3') as HTMLElement
 
+      // we listen scroll event
+      window.addEventListener('scroll', () => {
+
+        const {scrollTop, clientHeight} = document.documentElement as HTMLElement
+
+        const topCardOneToTopViewport: number = cardOne.getBoundingClientRect().top
+        const topCardTwoToTopViewport: number = cardTwo.getBoundingClientRect().top
+        const topCardThreeToTopViewport: number = cardThree.getBoundingClientRect().top
+
+        // Launch animation
+        if(scrollTop > (scrollTop + topCardOneToTopViewport) - clientHeight * 0.8) {
+          cardOne.classList.remove('display-animation-b-l')
+        }
+        if(scrollTop > (scrollTop + topCardTwoToTopViewport) - clientHeight * 0.8) {
+          cardTwo.classList.remove('display-animation-b-r')
+        }
+        if(scrollTop > (scrollTop + topCardThreeToTopViewport) - clientHeight * 0.8) {
+          cardThree.classList.remove('display-animation-b-l')
+        }
+      })
+    }
+  }
 })
 </script>
