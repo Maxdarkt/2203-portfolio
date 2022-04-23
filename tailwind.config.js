@@ -1,5 +1,4 @@
 module.exports = {
-  darkMode: 'media', // or 'media' or 'class'
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
@@ -57,9 +56,6 @@ module.exports = {
       'full': '9999px',
       'large': '12px',
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }

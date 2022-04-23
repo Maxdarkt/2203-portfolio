@@ -3,9 +3,9 @@
     <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-black text-center mt-8">
         Contactez-moi
     </h2>
-    <div class="border-b-4 border-black w-[35%] mx-auto my-8"></div>
+    <div class="border-b-4 border-black w-[35%] mx-auto my-4 xs:my-8"></div>
     <!-- contenair-max-width -->
-    <div id="contenair-max-width" class="lg:max-w-2xl mx-auto my-16">
+    <div id="contenair-max-width" class="md:max-w-2xl mx-auto my-16">
       <form class="rounded-lg bg-white shadow-lg transition duration-500 hover:shadow-2xl p-8">
         <div class="relative z-0 mb-8 w-full group">
           <input type="email" v-model="email" name="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />

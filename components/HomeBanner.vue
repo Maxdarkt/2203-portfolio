@@ -1,8 +1,8 @@
 <template>
-  <div id="home-banner" class="w-screen h-screen grid grid-cols-12 bg-[url('~/assets/images/banner/background-MT.jpg')] bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover overflow-hidden">
+  <div id="home-banner" class="w-screen h-screen grid grid-cols-12 bg-[url('~/assets/images/banner/background-MT.jpg')] bg-center xs:bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover overflow-hidden">
     <!-- Block top -->
     <div class="col-span-12 flex flex-col justify-end items-center p-4 pr-8">
-      <img src="~/assets/images/banner/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-80 ml-8">
+      <img src="~/assets/images/banner/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-32 xs:max-h-40 sm:max-h-80 ml-8">
     </div><!-- End Block top -->
     <!-- Block bottom -->
     <div class="col-span-12 flex flex-col justify-start items-center p-4">
@@ -15,12 +15,12 @@
         <span class="w-fit position-0 position-2 transition duration-700">u</span>
         <span class="w-fit position-0 position-2 transition duration-700">l</span>
         <span class="w-fit position-0 position-2 transition duration-700">l</span>
-        <span class="w-fit position-0 position-1 transition duration-700 ml-4">s</span>
+        <span class="w-fit position-0 position-1 transition duration-700 ml-2 xs:ml-4">s</span>
         <span class="w-fit position-0 position-2 transition duration-700">t</span>
         <span class="w-fit position-0 position-1 transition duration-700">a</span>
         <span class="w-fit position-0 position-2 transition duration-700">c</span>
         <span class="w-fit position-0 position-2 transition duration-700">k</span>
-        <span class="w-fit position-0 position-2 transition duration-700 ml-4">d</span>
+        <span class="w-fit position-0 position-2 transition duration-700 ml-2 xs:ml-4">d</span>
         <span class="w-fit position-0 position-1 transition duration-700">e</span>
         <span class="w-fit position-0 position-2 transition duration-700">v</span>
         <span class="w-fit position-0 position-1 transition duration-700">e</span>
@@ -49,14 +49,14 @@
       <!-- End animation 3 logos -->
     </div><!-- End Block bottom -->
     <!-- banner opacity -->
-    <div id="banner-description" class="col-span-12 self-end text-white p-4 pr-8 bg-black/70 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/90 sm:to-black/70 transition duration-[1500ms] translate-y-40">
-      <h2 class="text-lg font-bold underline underline-offset-4">
+    <div id="banner-description" class="col-span-12 self-end text-white p-4 bg-black/70 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/90 sm:to-black/70 transition duration-[1500ms] translate-y-40">
+      <h2 class="text-sm xs:text-lg font-bold underline underline-offset-4 mb-6">
         En savoir plus
       </h2>
-      <p class="text-justify mt-4">
+      <p class="hidden sm:block text-sm xs:text-lg text-justify mt-4">
         <strong>En régie :</strong> Pour les professionnels qui recherchent la souplesse d'un support freelance pour renforcer ses équipes.
       </p>
-      <p class="text-justify my-6">
+      <p class="hidden sm:block text-sm xs:text-lg text-justify my-6">
         <strong>Au forfait :</strong> Pour les clients qui recherchent la réalisation d'un projet bien défini.
       </p>
       <p id="scroll-button" class="demo">
