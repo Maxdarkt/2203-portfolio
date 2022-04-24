@@ -96,7 +96,7 @@ export default Vue.extend({
         return
       }
 
-      this.$axios.$post('http://127.0.0.1/portfolio-api/api/contact/', {
+      this.$axios.$post('contact/', {
         email: this.email,
         lastName: this.lastName,
         firstName: this.firstName,
