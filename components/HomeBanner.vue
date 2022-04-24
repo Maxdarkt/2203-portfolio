@@ -49,7 +49,7 @@
       <!-- End animation 3 logos -->
     </div><!-- End Block bottom -->
     <!-- banner opacity -->
-    <div id="banner-description" class="col-span-12 self-end text-white p-4 bg-black/70 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/90 sm:to-black/70 transition duration-[1500ms] translate-y-40">
+    <div id="banner-description" class="col-span-12 self-end text-white p-4 bg-black/70 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/90 sm:to-black/70 transition duration-[1500ms] translate-y-[100%]">
       <h2 class="text-sm xs:text-lg font-bold underline underline-offset-4 mb-6">
         En savoir plus
       </h2>
