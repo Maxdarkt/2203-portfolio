@@ -7,7 +7,7 @@
     <!-- Block bottom -->
     <div class="col-span-12 flex flex-col justify-start items-center p-4">
       <h1 id="animate-text" class="hidden text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center">
-        Hello World !
+        Tourneux Maxence
       </h1>
       <!-- animation 1 -->
       <p id="animateText-2" class="xs:text-lg sm:text-xl md:text-xl lg:text-3xl font-bold text-gray-200 mt-8 text-center flex">
