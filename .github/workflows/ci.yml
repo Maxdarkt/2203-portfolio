@@ -20,17 +20,21 @@ jobs:
         with:
           name: dist
           path: dist
-  deploy:
-    web-deploy:
-    name: 🚀 Deploy website every commit
-    runs-on: ubuntu-latest
-    steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2.1.0
-    
-    - name: 📂 Sync files
+deploy:
+  name: Deploy 🚀
+  needs: build
+  runs-on: ubuntu-latest
+  steps: 
+    - name: Checkout repository
+      uses: actions/checkout@master
+    - name: Download artifact
+      uses: actions/download-artifact@master
+      with: 
+        name: dist
+        path: dist
+    - name: Sync files to hosting
       uses: SamKirkland/web-deploy@1.0.0
-      with:
-        target-server: samkirkland.com
-        remote-user: myFtpUserName
+      with: 
+        target-server: ftp.mt-develop.com:21
+        remote-user: u744866482@mt-develop.com
         remote-key: ${{ secrets.SSH_KEY }}
