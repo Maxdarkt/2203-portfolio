@@ -48,9 +48,9 @@
 </template>
   
 <script lang="ts">
+import Vue from 'vue'
 import { validateForm, changeClassForm } from '~/assets/js/validateForm'
 import regex from '~/assets/js/regex'
-import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Contact',

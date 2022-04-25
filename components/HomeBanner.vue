@@ -91,17 +91,14 @@
         // we define the timer
         const delay: number = 100
         const delayStart: number = 0
-        // we declare the variables
-        let contents: string
-        let letters: string[]
         // we get DOM element
         const elem: any = document.querySelector("#animate-text") as HTMLElement
         // retrieves the content of the paragraph
-        contents = elem.textContent.trim()
+        const contents: string = elem.textContent.trim()
         // empty the content
         elem.textContent = ""
         // separate each character
-        letters = contents.split("")
+        const letters: string[] = contents.split("")
         elem.classList.remove('hidden')
         // For each character
         letters.forEach(function (letter: string, index: number) {
