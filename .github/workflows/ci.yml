@@ -36,8 +36,8 @@ jobs:
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
           username: u744866482
-          server: ftp.mto-concept.com
-          port: 22 # default is 22
+          server: mt-develop.com
+          port: 21 # default is 22
           ssh_private_key: ${{ secrets.SSH_KEY }}
  
           
