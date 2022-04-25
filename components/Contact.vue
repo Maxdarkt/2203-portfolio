@@ -106,7 +106,6 @@ export default Vue.extend({
           contactElement.classList.remove('display-animation-b-l')
         } else {
           contactElement.classList.remove('opacity-0')
-          console.log(contactElement.classList)
         }
         this.loaded = true
         this.removeScrollListenerContact()
