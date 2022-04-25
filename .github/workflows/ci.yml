@@ -30,8 +30,8 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@master
         with: 
-          name: dist
-          path: dist
+          name: public_html
+          path: /domains/mt-develop.com/public_html
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
