@@ -33,9 +33,9 @@ jobs:
           name: dist
           path: dist
       - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: ftp.mt-develop.com
-        username: u744866482
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./public_html/
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ftp.mt-develop.com
+          username: u744866482@mt-develop.com
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./public_html/
