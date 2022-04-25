@@ -51,6 +51,7 @@
 import { validateForm, changeClassForm } from '~/assets/js/validateForm'
 import regex from '~/assets/js/regex'
 import Vue from 'vue'
+import { Input } from 'postcss'
 
 export default Vue.extend({
   name: 'Contact',
@@ -117,7 +118,6 @@ export default Vue.extend({
         message: this.message
       })
       .then(response => {
-        console.log(response)
         if(response.code === 200) {
           this.alertForm = 'Le mail a bien été envoyé, je vous répondrai dans les plus bref délais.'
           const element = document.getElementById('alert-form') as HTMLElement
@@ -126,13 +126,35 @@ export default Vue.extend({
           const self: any = this
           setTimeout(() => {
             element.classList.remove('opacity-100')
-          }, 5000)
+          }, 4000)
           setTimeout(() => {
             self.alertForm = ''
             element.classList.remove('text-green-400')
-          }, 6000)
+            self.resetForm()
+          }, 5000)
         }
       })
+    },
+    resetForm():void {
+      // get all inputs
+      const inputs = document.querySelectorAll('input') as NodeListOf<HTMLInputElement>
+      // get textarea
+      const textarea = document.querySelector('textarea') as HTMLTextAreaElement
+      // we reset all class inputs
+      inputs.forEach(item => this.resetInput(item))
+      // we reset class textarea
+      this.resetInput(textarea)
+      // we reset value
+      this.email = ''
+      this.lastName = ''
+      this.firstName = ''
+      this.mobile = ''
+      this.company = ''
+      this.message = ''
+    },
+    resetInput(element:HTMLInputElement | HTMLTextAreaElement): void {
+      element.classList.remove('is-invalid')
+      element.classList.remove('is-valid')
     }
   }
 })

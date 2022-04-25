@@ -36,7 +36,7 @@
       </p><!-- End animation separator -->
       <!-- animation 3 logos -->
       <div class="flex justify-center items-center space-x-4">
-        <a href="mailto:Maxdev74@gmail.com" class="transition duration-500 hover:rotate-[360deg]">
+        <a href="mailto:Maxence@mt-develop.com" class="transition duration-500 hover:rotate-[360deg]">
           <img src="~/assets/images/socialNetworks/mail_white.png" alt="logo mail" class="position-0 position-3 transition duration-[1500ms]">
         </a>
         <a href="https://github.com/Maxdarkt" target="_blank" class="transition duration-500 hover:rotate-[360deg]">
