@@ -71,14 +71,14 @@
 
   export default Vue.extend({
     name: 'HomeBanner',
-    data() {
-      return {
-      }
-    },
     props: {
       animation: {
         type: Boolean,
         default: false
+      }
+    },
+    data() {
+      return {
       }
     },
     mounted() {
