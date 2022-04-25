@@ -20,21 +20,21 @@ jobs:
         with:
           name: dist
           path: dist
-deploy:
-  name: Deploy 🚀
-  needs: build
-  runs-on: ubuntu-latest
-  steps: 
-    - name: Checkout repository
-      uses: actions/checkout@master
-    - name: Download artifact
-      uses: actions/download-artifact@master
-      with: 
-        name: dist
-        path: dist
-    - name: Sync files to hosting
-      uses: SamKirkland/web-deploy@1.0.0
-      with: 
-        target-server: ftp.mt-develop.com:21
-        remote-user: u744866482@mt-develop.com
-        remote-key: ${{ secrets.SSH_KEY }}
+  deploy:
+    name: Deploy 🚀
+    needs: build
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout repository
+        uses: actions/checkout@master
+      - name: Download artifact
+        uses: actions/download-artifact@master
+        with: 
+          name: dist
+          path: dist
+      - name: Sync files to hosting
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with: 
+          server: ftp.mt-develop.com:21
+          username: u744866482@mt-develop.com
+          password: ${{ secrets.FTP_PASSWORD }}
