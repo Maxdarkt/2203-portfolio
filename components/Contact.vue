@@ -1,30 +1,30 @@
 <template>
-  <section id="skills" class="bg-[#E5E5E5] p-4">
+  <section id="contact" class="bg-[#E5E5E5] p-4">
     <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-black text-center mt-8">
         Contactez-moi
     </h2>
     <div class="border-b-4 border-black w-[35%] mx-auto my-4 xs:my-8"></div>
     <!-- contenair-contact -->
-    <div id="contenair-contact" class="md:max-w-2xl mx-auto my-16 transition duration-500 display-animation-b-l">
+    <div id="contenair-contact" class="md:max-w-2xl mx-auto my-16 transition duration-500" :class="{'display-animation-b-l' : !loaded}">
       <form class="rounded-lg bg-white shadow-lg transition duration-500 hover:shadow-2xl p-8">
         <div class="relative z-0 mb-8 w-full group">
-          <input type="email" v-model="email" name="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+          <input id="email" type="email" v-model="email" name="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " @input="validateForm('email')" required />
           <label for="email" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">Email</label>
         </div>
         <div class="grid xl:grid-cols-2 xl:gap-6">
           <div class="relative z-0 mb-8 w-full group">
-            <input type="text" v-model="lastName" name="last_name" id="last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-            <label for="last_name" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">Nom</label>
+            <input id="lastName" type="text" v-model="lastName" name="lastName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " @input="validateForm('lastName')" required />
+            <label for="lastName" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">Nom</label>
           </div>
           <div class="relative z-0 mb-8 w-full group">
-            <input type="text" v-model="firstName" name="first_name" id="first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-            <label for="first_name" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">Prénom</label>
+            <input type="text" v-model="firstName" name="firstName" id="firstName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " @input="validateForm('firstName')" required />
+            <label for="firstName" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">Prénom</label>
           </div>
         </div>
         <div class="grid xl:grid-cols-2 xl:gap-6">
           <div class="relative z-0 mb-8 w-full group">
-            <input type="tel" pattern="[+0-9]{3}[0-9]{9}" v-model="mobile" name="phone" id="phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-            <label for="phone" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">Mobile (+33 6 60 10 20 30)</label>
+            <input type="tel" v-model="mobile" name="mobile" id="mobile" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " @input="validateForm('mobile')" required />
+            <label for="mobile" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">Mobile</label>
           </div>
           <div class="relative z-0 mb-8 w-full group">
             <input type="text" v-model="company" name="company" id="company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="relative z-0 mb-8 w-full group">
-          <textarea type="message" v-model="message" name="message" class="block h-32 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " row="5" required></textarea>
+          <textarea id="message" type="message" v-model="message" name="message" class="block h-32 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " row="5" @input="validateForm('message')" required></textarea>
           <label for="message" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">Votre message</label>
         </div>
         <div class="flex justify-center items-center space-x-8">
@@ -48,24 +48,27 @@
 </template>
   
 <script lang="ts">
+import { validateForm, changeClassForm } from '~/assets/js/validateForm'
+import regex from '~/assets/js/regex'
 import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Contact',
   data() {
     return {
-      email: null,
-      firstName: null,
-      lastName: null,
-      mobile: null,
-      company: null,
-      message: null,
-      alertForm: ''
+      email: '',
+      firstName: '',
+      lastName: '',
+      mobile: '',
+      company: '',
+      message: '',
+      alertForm: '',
+      loaded: false
     }
   },
   computed: {
     validatefields(): boolean {
-      if(this.email && this.firstName && this.lastName && this.message) {
+      if(regex.email.test(this.email) && regex.name.test(this.firstName) && regex.name.test(this.lastName) && regex.message.test(this.message)) {
         return true
       }
       return false
@@ -75,27 +78,36 @@ export default Vue.extend({
     this.displayContact()
   },
   methods: {
+    changeClassForm,
+    validateForm,
+    // launch Event Listerner
     displayContact(): void {
+      // we listen scroll event
+      window.addEventListener('scroll', this.addScrollListenerContact)
+    },
+    // callback
+    addScrollListenerContact(): void {
       // we get portfolio element
       const contactElement = document.getElementById('contenair-contact') as HTMLElement
-      // we listen scroll event
-      window.addEventListener('scroll', () => {
 
-        const {scrollTop, clientHeight} = document.documentElement as HTMLElement
+      const {scrollTop, clientHeight} = document.documentElement as HTMLElement
 
-        const topcontactElementOneToTopViewport: number = contactElement.getBoundingClientRect().top
+      const topcontactElementOneToTopViewport: number = contactElement.getBoundingClientRect().top
 
-        // Launch animation
-        if(scrollTop > (scrollTop + topcontactElementOneToTopViewport) - clientHeight * 0.8) {
-          contactElement.classList.remove('display-animation-b-l')
-        }
-      })
+      // Launch animation
+      if(scrollTop > (scrollTop + topcontactElementOneToTopViewport) - clientHeight * 0.8) {
+        this.loaded = true
+        this.removeScrollListenerContact()
+      }
+    },
+    // stop Event Listerner
+    removeScrollListenerContact():void {
+      window.removeEventListener("scroll", this.addScrollListenerContact)
     },
     sendEmail(): void {
       if(!this.validatefields) {
         return
       }
-
       this.$axios.$post('contact/', {
         email: this.email,
         lastName: this.lastName,

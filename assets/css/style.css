@@ -1,8 +1,11 @@
+/*---------- Font --------*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap');
 
 html{
   font-family: 'Open Sans', sans-serif;
 }
+
+/*---------- animations --------*/
 
 .slide-animation-b-l{
   @apply translate-y-40 -translate-x-[50%] opacity-0;
@@ -18,4 +21,14 @@ html{
 
 .display-animation-b-r{
   @apply translate-y-20 translate-x-10 opacity-0; 
+}
+
+/*---------- Form --------*/
+
+.is-valid{
+  @apply border-b-2 border-green-400 bg-green-200 bg-opacity-40;
+}
+
+.is-invalid{
+  @apply border-b-2 border-red-600 bg-red-400 bg-opacity-30;
 }

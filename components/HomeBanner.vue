@@ -144,7 +144,7 @@
       displayBannerDescription(): void {
         setTimeout(() => {
           const element = document.getElementById('banner-description') as HTMLElement
-          element.classList.remove('translate-y-40')
+          element.classList.remove('translate-y-[100%]')
         }, 1500)
       }
     }

@@ -22,9 +22,6 @@ export default Vue.extend({
     return {
     }
   },
-  mounted() {
-    console.log(process.env.NODE_ENV)
-  },
   methods: {
     scrollTo(height: number): void {
       window.scrollTo({ 

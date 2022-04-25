@@ -309,32 +309,40 @@ export default Vue.extend({
     this.displaySkills()
   },
   methods: {
+    // launch Event Listerner
     displaySkills(): void {
+      // we listen scroll event
+      window.addEventListener('scroll', this.addScrollListenerSkills)
+    },
+    // callback
+    addScrollListenerSkills(): void {
       // we get three cards
       const cardSkillsOne = document.getElementById('card-skills-1') as HTMLElement
       const cardSkillsTwo = document.getElementById('card-skills-2') as HTMLElement
       const cardSkillsThree = document.getElementById('card-skills-3') as HTMLElement
-      // we listen scroll event
-      window.addEventListener('scroll', () => {
 
-        const {scrollTop, clientHeight} = document.documentElement as HTMLElement
+      const {scrollTop, clientHeight} = document.documentElement as HTMLElement
 
-        const topCardSkillsOneToTopViewport: number = cardSkillsOne.getBoundingClientRect().top
-        const topCardSkillsTwoToTopViewport: number = cardSkillsTwo.getBoundingClientRect().top
-        const topCardSkillsThreeToTopViewport: number = cardSkillsThree.getBoundingClientRect().top
+      const topCardSkillsOneToTopViewport: number = cardSkillsOne.getBoundingClientRect().top
+      const topCardSkillsTwoToTopViewport: number = cardSkillsTwo.getBoundingClientRect().top
+      const topCardSkillsThreeToTopViewport: number = cardSkillsThree.getBoundingClientRect().top
 
-        // Launch animation
-        if(scrollTop > (scrollTop + topCardSkillsOneToTopViewport) - clientHeight * 0.8) {
-          cardSkillsOne.classList.remove('display-animation-b-l')
-        }
-        if(scrollTop > (scrollTop + topCardSkillsTwoToTopViewport) - clientHeight * 0.8) {
-          cardSkillsTwo.classList.remove('display-animation-b-r')
-        }
-        if(scrollTop > (scrollTop + topCardSkillsThreeToTopViewport) - clientHeight * 0.8) {
-          cardSkillsThree.classList.remove('display-animation-b-l')
-        }
-      })
-    }
+      // Launch animation
+      if(scrollTop > (scrollTop + topCardSkillsOneToTopViewport) - clientHeight * 0.8) {
+        cardSkillsOne.classList.remove('display-animation-b-l')
+      }
+      if(scrollTop > (scrollTop + topCardSkillsTwoToTopViewport) - clientHeight * 0.8) {
+        cardSkillsTwo.classList.remove('display-animation-b-r')
+      }
+      if(scrollTop > (scrollTop + topCardSkillsThreeToTopViewport) - clientHeight * 0.8) {
+        cardSkillsThree.classList.remove('display-animation-b-l')
+        this.removeScrollListenerSkills()
+      }
+    },
+    // stop Event Listener
+    removeScrollListenerSkills():void {
+      window.removeEventListener("scroll", this.addScrollListenerSkills)
+    },
   }
 })
 </script>

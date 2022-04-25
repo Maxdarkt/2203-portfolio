@@ -93,33 +93,39 @@ export default Vue.extend({
     this.displayAboutMe()
   },
   methods: {
+    // launch Event Listerner
     displayAboutMe(): void {
+      // we listen scroll event
+      window.addEventListener('scroll', this.addScrollListenerAboutMe)
+    },
+    // callback
+    addScrollListenerAboutMe(): void {
       // we get three cards
       const cardOne = document.getElementById('card-about-me-1') as HTMLElement
       const cardTwo = document.getElementById('card-about-me-2') as HTMLElement
       const cardThree = document.getElementById('card-about-me-3') as HTMLElement
 
-      // we listen scroll event
-      window.addEventListener('scroll', () => {
+      const {scrollTop, clientHeight} = document.documentElement as HTMLElement
 
-        const {scrollTop, clientHeight} = document.documentElement as HTMLElement
-
-        const topCardOneToTopViewport: number = cardOne.getBoundingClientRect().top
-        const topCardTwoToTopViewport: number = cardTwo.getBoundingClientRect().top
-        const topCardThreeToTopViewport: number = cardThree.getBoundingClientRect().top
-
-        // Launch animation
-        if(scrollTop > (scrollTop + topCardOneToTopViewport) - clientHeight * 0.8) {
-          cardOne.classList.remove('slide-animation-b-l')
-        }
-        if(scrollTop > (scrollTop + topCardTwoToTopViewport) - clientHeight * 0.8) {
-          cardTwo.classList.remove('slide-animation-b-r')
-        }
-        if(scrollTop > (scrollTop + topCardThreeToTopViewport) - clientHeight * 0.8) {
-          cardThree.classList.remove('slide-animation-b-l')
-        }
-      })
-    }
+      const topCardOneToTopViewport: number = cardOne.getBoundingClientRect().top
+      const topCardTwoToTopViewport: number = cardTwo.getBoundingClientRect().top
+      const topCardThreeToTopViewport: number = cardThree.getBoundingClientRect().top
+      // Launch animation
+      if(scrollTop > (scrollTop + topCardOneToTopViewport) - clientHeight * 0.8) {
+        cardOne.classList.remove('slide-animation-b-l')
+      }
+      if(scrollTop > (scrollTop + topCardTwoToTopViewport) - clientHeight * 0.8) {
+        cardTwo.classList.remove('slide-animation-b-r')
+      }
+      if(scrollTop > (scrollTop + topCardThreeToTopViewport) - clientHeight * 0.8) {
+        cardThree.classList.remove('slide-animation-b-l')
+        this.removeScrollListenerAboutMe()
+      }
+    },
+    // stop Event Listerner
+    removeScrollListenerAboutMe():void {
+      window.removeEventListener("scroll", this.addScrollListenerAboutMe)
+    },
   }
 })
 </script>
