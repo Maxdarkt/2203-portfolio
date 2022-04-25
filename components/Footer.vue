@@ -57,7 +57,7 @@ export default Vue.extend({
       const topFooterElementOneToTopViewport: number = FooterElement.getBoundingClientRect().top
 
       // Launch animation
-      if(scrollTop > (scrollTop + topFooterElementOneToTopViewport) - clientHeight * 0.9) {
+      if(scrollTop > (scrollTop + topFooterElementOneToTopViewport) - clientHeight * 1) {
         FooterElement.classList.remove('translate-y-10')
         FooterElement.classList.remove('opacity-0')
         this.removeScrollListenerFooter()

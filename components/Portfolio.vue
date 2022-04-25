@@ -5,7 +5,7 @@
     </h2>
     <div class="border-b-4 border-black w-[35%] mx-auto mt-4 xs:mt-8 mb-8 xs:mb-16"></div>
     <!-- contenair-portfolio -->
-    <div id="contenair-portfolio" class="grid grid-cols-12 items-center lg:max-w-5xl mx-auto mt-8 transition duration-500 filter display-animation-b-r">
+    <div id="contenair-portfolio" class="grid grid-cols-12 items-center lg:max-w-5xl mx-auto mt-8 transition duration-500 filter" :class="{'display-animation-b-r' : animation, 'opacity-0' : !animation}">
       <!-- portfolio head -->
       <div class="col-span-12 bg-black/90 h-10 rounded-t-md flex justify-center items-center">
         <span class="bg-white/40 h-3 w-[95%] rounded-md shadow-inner">
@@ -50,6 +50,12 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Portfolio',
+  props: {
+    animation: {
+      type: Boolean,
+      default: false
+    }
+  },
   mounted() {
     this.displayPortfolio()
   },
@@ -70,7 +76,11 @@ export default Vue.extend({
 
       // Launch animation
       if(scrollTop > (scrollTop + topPortfolioElementOneToTopViewport) - clientHeight * 0.8) {
-        portfolioElement.classList.remove('display-animation-b-r')
+        if(this.animation) {
+          portfolioElement.classList.remove('display-animation-b-r')
+        } else {
+          portfolioElement.classList.remove('opacity-0')
+        }
         this.removeScrollListenerPortfolio()
       }
     },

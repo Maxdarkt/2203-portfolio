@@ -1,12 +1,12 @@
 <template>
   <div class="overflow-hidden">
-    <HomeBanner class="fixed top-0 left-0 z-0" @event-scroll-to="scrollTo"/>
-    <div class="relative w-screen h-screen -z-10"></div>
-    <AboutMe class="relative z-10"/>
-    <Skills class="relative z-10"/>
-    <Portfolio class="relative z-10"/>
-    <Contact class="relative z-10"/>
-    <Footer class="relative z-10" @event-scroll-to="scrollTo"/>
+    <HomeBanner class="fixed top-0 left-0 z-0" @event-scroll-to="scrollTo" :animation="animation"/>
+    <div class="relative w-screen h-screen -z-10" :animation="animation"></div>
+    <AboutMe class="relative z-10" :animation="animation"/>
+    <Skills class="relative z-10" :animation="animation"/>
+    <Portfolio class="relative z-10" :animation="animation"/>
+    <Contact class="relative z-10" :animation="animation"/>
+    <Footer class="relative z-10" :animation="animation" @event-scroll-to="scrollTo"/>
   </div>
 </template>
 
@@ -20,7 +20,12 @@ export default Vue.extend({
   },
   data() {
     return {
+      loaded: false,
+      animation: false,
     }
+  },
+  mounted() {
+    this.activateAnimation()
   },
   methods: {
     scrollTo(height: number): void {
@@ -28,6 +33,16 @@ export default Vue.extend({
           top: height,
           behavior: 'smooth'
         })
+    },
+    getWidthScreen(): boolean {
+      if(window.innerWidth > 350) {
+        return true
+      }
+      return false
+    },
+    async activateAnimation(): Promise<void> {
+      this.animation = await this.getWidthScreen()
+      this.loaded = true
     }
   }
 })

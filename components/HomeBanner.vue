@@ -11,24 +11,24 @@
       </h1>
       <!-- animation 1 -->
       <p id="animateText-2" class="xs:text-lg sm:text-xl md:text-xl lg:text-3xl font-bold text-gray-200 mt-8 text-center flex">
-        <span class="w-fit position-0 position-1 transition duration-700">F</span>
-        <span class="w-fit position-0 position-2 transition duration-700">u</span>
-        <span class="w-fit position-0 position-2 transition duration-700">l</span>
-        <span class="w-fit position-0 position-2 transition duration-700">l</span>
-        <span class="w-fit position-0 position-1 transition duration-700 ml-2 xs:ml-4">s</span>
-        <span class="w-fit position-0 position-2 transition duration-700">t</span>
-        <span class="w-fit position-0 position-1 transition duration-700">a</span>
-        <span class="w-fit position-0 position-2 transition duration-700">c</span>
-        <span class="w-fit position-0 position-2 transition duration-700">k</span>
-        <span class="w-fit position-0 position-2 transition duration-700 ml-2 xs:ml-4">d</span>
-        <span class="w-fit position-0 position-1 transition duration-700">e</span>
-        <span class="w-fit position-0 position-2 transition duration-700">v</span>
-        <span class="w-fit position-0 position-1 transition duration-700">e</span>
-        <span class="w-fit position-0 position-2 transition duration-700">l</span>
-        <span class="w-fit position-0 position-1 transition duration-700">o</span>
-        <span class="w-fit position-0 position-2 transition duration-700">p</span>
-        <span class="w-fit position-0 position-2 transition duration-700">e</span>
-        <span class="w-fit position-0 position-2 transition duration-700">r</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-1' : animation, 'opacity-0' : !animation}">F</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">u</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">l</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">l</span>
+        <span class="w-fit position-0 transition duration-700 ml-2 xs:ml-4" :class="{'position-1' : animation, 'opacity-0' : !animation}">s</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">t</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-1' : animation, 'opacity-0' : !animation}">a</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">c</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">k</span>
+        <span class="w-fit position-0 transition duration-700 ml-2 xs:ml-4" :class="{'position-2' : animation, 'opacity-0' : !animation}">d</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-1' : animation, 'opacity-0' : !animation}">e</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">v</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-1' : animation, 'opacity-0' : !animation}">e</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">l</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-1' : animation, 'opacity-0' : !animation}">o</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">p</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">e</span>
+        <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">r</span>
       </p><!-- End animation 1 -->
       <!-- animation separator -->
       <p id="separator-banner" class="my-4">
@@ -37,13 +37,13 @@
       <!-- animation 3 logos -->
       <div class="flex justify-center items-center space-x-4">
         <a href="mailto:Maxence@mt-develop.com" class="transition duration-500 hover:rotate-[360deg]">
-          <img src="~/assets/images/socialNetworks/mail_white.png" alt="logo mail" class="position-0 position-3 transition duration-[1500ms]">
+          <img src="~/assets/images/socialNetworks/mail_white.png" alt="logo mail" class="position-0 transition duration-[1500ms]" :class="{'position-3' : animation, 'opacity-0' : !animation}">
         </a>
         <a href="https://github.com/Maxdarkt" target="_blank" class="transition duration-500 hover:rotate-[360deg]">
-          <img src="~/assets/images/socialNetworks/github_white.png" alt="logo github" class="position-0 position-4 transition duration-[1500ms]">
+          <img src="~/assets/images/socialNetworks/github_white.png" alt="logo github" class="position-0 transition duration-[1500ms]" :class="{'position-4' : animation, 'opacity-0' : !animation}">
         </a>
         <a href="https://www.linkedin.com/in/tourneux-maxence-6024615a/" target="_blank" class="transition duration-500 hover:rotate-[360deg]">
-          <img src="~/assets/images/socialNetworks/linkedin_white.png" alt="logo linkedin" class="position-0 position-3 transition duration-[1500ms]">
+          <img src="~/assets/images/socialNetworks/linkedin_white.png" alt="logo linkedin" class="position-0 transition duration-[1500ms]" :class="{'position-3' : animation, 'opacity-0' : !animation}">
         </a>
       </div>
       <!-- End animation 3 logos -->
@@ -73,6 +73,12 @@
     name: 'HomeBanner',
     data() {
       return {
+      }
+    },
+    props: {
+      animation: {
+        type: Boolean,
+        default: false
       }
     },
     mounted() {
@@ -110,17 +116,21 @@
       // 2/ Second animation : display each letters (translate && rotate)
       animateText2(): void {
         // we define the timer
-        const delay: number = 75
+        const delay: number = this.animation ? 75 : 150
         const delayStart: number = 1000
         // we get DOM element
         const elem: NodeListOf<HTMLElement> = document.querySelectorAll('.position-0')
         // For each letter or image
         elem.forEach((item: HTMLElement, index: number) => {
           setTimeout(() => {
-            item.classList.remove('position-1')
-            item.classList.remove('position-2')
-            item.classList.remove('position-3')
-            item.classList.remove('position-4')
+            if(this.animation) {
+              item.classList.remove('position-1')
+              item.classList.remove('position-2')
+              item.classList.remove('position-3')
+              item.classList.remove('position-4')
+            } else {
+              item.classList.remove('opacity-0')
+            }
           }, delayStart + delay * index)
         })
         // we launch the third animation

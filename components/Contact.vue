@@ -5,7 +5,7 @@
     </h2>
     <div class="border-b-4 border-black w-[35%] mx-auto my-4 xs:my-8"></div>
     <!-- contenair-contact -->
-    <div id="contenair-contact" class="md:max-w-2xl mx-auto my-16 transition duration-500" :class="{'display-animation-b-l' : !loaded}">
+    <div id="contenair-contact" class="md:max-w-2xl mx-auto my-16 transition duration-500" :class="{'display-animation-b-l' : (!loaded && animation), 'opacity-0' : (!loaded && !animation)}">
       <form class="rounded-lg bg-white shadow-lg transition duration-500 hover:shadow-2xl p-8">
         <div class="relative z-0 mb-8 w-full group">
           <input id="email" type="email" v-model="email" name="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " @input="validateForm('email')" required />
@@ -37,7 +37,7 @@
         </div>
         <div class="flex justify-center items-center space-x-8">
           <button type="submit" class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" :class="{'disabled bg-gray-300' : !validatefields, 'bg-gray-700 transition duration-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300' : validatefields}" @click.prevent="sendEmail">Envoyer</button>
-          <button type="reset" class="bg-gray-700 transition duration-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Effacer</button>
+          <button type="reset" class="bg-gray-700 transition duration-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" @click.prevent="resetForm">Effacer</button>
         </div>
         <div id="alert-form" class="text-lg text-center py-2 my-4 transition duration-700 opacity-0">
           {{ alertForm }}
@@ -51,10 +51,15 @@
 import { validateForm, changeClassForm } from '~/assets/js/validateForm'
 import regex from '~/assets/js/regex'
 import Vue from 'vue'
-import { Input } from 'postcss'
 
 export default Vue.extend({
   name: 'Contact',
+  props: {
+    animation: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       email: '',
@@ -97,8 +102,15 @@ export default Vue.extend({
 
       // Launch animation
       if(scrollTop > (scrollTop + topcontactElementOneToTopViewport) - clientHeight * 0.8) {
+        if(this.animation) {
+          contactElement.classList.remove('display-animation-b-l')
+        } else {
+          contactElement.classList.remove('opacity-0')
+          console.log(contactElement.classList)
+        }
         this.loaded = true
         this.removeScrollListenerContact()
+
       }
     },
     // stop Event Listerner

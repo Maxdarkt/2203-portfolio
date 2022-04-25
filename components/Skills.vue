@@ -7,7 +7,7 @@
     <!-- contenair-max-width -->
     <div id="contenair-max-width" class="grid grid-cols-12 items-center lg:max-w-5xl mx-auto mt-8">
       <!-- card-1 -->
-      <div id="card-skills-1" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8 display-animation-b-l">
+      <div id="card-skills-1" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8" :class="{'display-animation-b-l' : animation, 'opacity-0' : !animation}">
         <h4 class="col-span-12 text-lg md:text-xl font-semibold my-4">
           Les technologies utilisées :
         </h4>
@@ -158,7 +158,7 @@
       </div><!-- End card-1 -->
       <!-- -----/-----/----/-----/----/-----/-----/----/-----/----/-----/-----/----/-----/----/----- -->
       <!-- card-2 -->
-      <div id="card-skills-2" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8 display-animation-b-r">
+      <div id="card-skills-2" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8" :class="{'display-animation-b-r' : animation, 'opacity-0' : !animation}">
         <h4 class="col-span-12 text-lg md:text-xl font-semibold my-4">
           Logiciels :
         </h4>
@@ -237,7 +237,7 @@
       </div><!-- End card-2 -->
       <!-- -----/-----/----/-----/----/-----/-----/----/-----/----/-----/-----/----/-----/----/----- -->
       <!-- card-3 -->
-      <div id="card-skills-3" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8 display-animation-b-l">
+      <div id="card-skills-3" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8" :class="{'display-animation-b-l' : animation, 'opacity-0' : !animation}">
         <h4 class="col-span-12 text-lg md:text-xl font-semibold my-4">
           En cours d'apprentissage :
         </h4>
@@ -305,6 +305,12 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Skills',
+  props: {
+    animation: {
+      type: Boolean,
+      default: false
+    }
+  },
   mounted() {
     this.displaySkills()
   },
@@ -329,13 +335,25 @@ export default Vue.extend({
 
       // Launch animation
       if(scrollTop > (scrollTop + topCardSkillsOneToTopViewport) - clientHeight * 0.8) {
-        cardSkillsOne.classList.remove('display-animation-b-l')
+        if(this.animation) {
+          cardSkillsOne.classList.remove('display-animation-b-l')
+        } else {
+          cardSkillsOne.classList.remove('opacity-0')
+        }
       }
       if(scrollTop > (scrollTop + topCardSkillsTwoToTopViewport) - clientHeight * 0.8) {
-        cardSkillsTwo.classList.remove('display-animation-b-r')
+        if(this.animation) {
+          cardSkillsTwo.classList.remove('display-animation-b-r')
+        } else {
+          cardSkillsTwo.classList.remove('opacity-0')
+        }
       }
       if(scrollTop > (scrollTop + topCardSkillsThreeToTopViewport) - clientHeight * 0.8) {
-        cardSkillsThree.classList.remove('display-animation-b-l')
+        if(this.animation) {
+          cardSkillsThree.classList.remove('display-animation-b-l')
+        } else {
+          cardSkillsThree.classList.remove('opacity-0')
+        }
         this.removeScrollListenerSkills()
       }
     },

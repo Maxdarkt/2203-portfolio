@@ -7,7 +7,7 @@
     <!-- contenair-max-width -->
     <div id="contenair-max-width" class="grid grid-cols-12 items-center lg:max-w-5xl mx-auto mt-4 xs:mt-8">
       <!-- card-1 -->
-      <div id="card-about-me-1" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8 slide-animation-b-l">
+      <div id="card-about-me-1" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8" :class="{'slide-animation-b-l' : animation, 'opacity-0' : !animation}">
         <div class="col-span-12 sm:col-span-3 flex flex-col justify-center items-center text-center p-4">
           <h3 class="text-lg md:text-xl text-center font-semibold mb-2">
             Design
@@ -26,7 +26,7 @@
         </div>
       </div><!-- End card-1 -->
       <!-- card-2 -->
-      <div id="card-about-me-2" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8 slide-animation-b-r">
+      <div id="card-about-me-2" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8" :class="{'slide-animation-b-r' : animation, 'opacity-0' : !animation}">
         <div class="col-span-12 sm:col-span-3 flex flex-col justify-center items-center text-center p-4">
           <h3 class="text-lg md:text-xl text-center font-semibold mb-2">
             Développement
@@ -62,7 +62,7 @@
         </div>
       </div><!-- End card-2 -->
       <!-- card-3 -->
-      <div id="card-about-me-3" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8 slide-animation-b-l">
+      <div id="card-about-me-3" class="col-span-12 grid grid-cols-12 items-center bg-white rounded-lg transition duration-500 shadow-lg hover:shadow-2xl p-4 mb-8" :class="{'slide-animation-b-l' : animation, 'opacity-0' : !animation}">
         <div class="col-span-12 sm:col-span-3 flex flex-col justify-center items-center text-center p-4">
           <h3 class="text-lg md:text-xl text-center font-semibold mb-2">
             Maintenance
@@ -89,6 +89,12 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'AboutMe',
+  props: {
+    animation: {
+      type: Boolean,
+      default: false
+    }
+  },
   mounted() {
     this.displayAboutMe()
   },
@@ -112,13 +118,25 @@ export default Vue.extend({
       const topCardThreeToTopViewport: number = cardThree.getBoundingClientRect().top
       // Launch animation
       if(scrollTop > (scrollTop + topCardOneToTopViewport) - clientHeight * 0.8) {
-        cardOne.classList.remove('slide-animation-b-l')
+        if(this.animation) {
+          cardOne.classList.remove('slide-animation-b-l')
+        } else {
+          cardOne.classList.remove('opacity-0')
+        }
       }
       if(scrollTop > (scrollTop + topCardTwoToTopViewport) - clientHeight * 0.8) {
-        cardTwo.classList.remove('slide-animation-b-r')
+        if(this.animation) {
+          cardTwo.classList.remove('slide-animation-b-r')
+        } else {
+          cardTwo.classList.remove('opacity-0')
+        }
       }
       if(scrollTop > (scrollTop + topCardThreeToTopViewport) - clientHeight * 0.8) {
-        cardThree.classList.remove('slide-animation-b-l')
+        if(this.animation) {
+          cardThree.classList.remove('slide-animation-b-l')
+        } else {
+          cardThree.classList.remove('opacity-0')
+        }
         this.removeScrollListenerAboutMe()
       }
     },
