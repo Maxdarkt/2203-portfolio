@@ -32,19 +32,9 @@ jobs:
         with: 
           name: dist
           path: dist
-      - name: SFTP Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
-        with:
-          username: u744866482
-          server: ftp.mt-develop.com
-          port: 21 # default is 22
-          ssh_private_key: ${{ secrets.SSH_KEY }}
- 
-          
-          # will put all file under this path
-          local_path: ./* # default is ./*
-          # files will copy to under remote_path
-          remote_path: /home/maxdarkt/00_Drive_Mega/30_Programmation/10_Projet\ Maxdarkt/30_portfolio/front/dist/
-          
-          # sftp args
-          args: '-o ConnectTimeout=5'
+      - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ftp.mt-develop.com
+        username: u744866482
+        password: ${{ secrets.FTP_PASSWORD }}
