@@ -33,4 +33,4 @@ jobs:
           server: ftp.mt-develop.com
           username: u744866482
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: /home/u744866482/domains/public_html/
+          local-dir: ./
