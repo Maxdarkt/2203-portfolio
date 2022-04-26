@@ -13,7 +13,7 @@
         Back to top 
     </p>
     <p class="flex space-x-4 my-4">
-      <a href="mailto:Maxence@mt-develop.com" class="transition duration-500 hover:rotate-[360deg]">
+      <a href="mailto:Maxdev74@gmail.com" class="transition duration-500 hover:rotate-[360deg]">
         <img src="~/assets/images/socialNetworks/mail_white.png" alt="logo mail">
       </a>
       <a href="https://github.com/Maxdarkt" target="_blank" class="transition duration-500 hover:rotate-[360deg]">
