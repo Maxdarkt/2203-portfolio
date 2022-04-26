@@ -27,14 +27,10 @@ jobs:
     steps: 
       - name: Checkout repository
         uses: actions/checkout@master
-      - name: Download artifact
-        uses: actions/download-artifact@master
-        with: 
-          name: dist
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ftp.mt-develop.com
           username: u744866482
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
+          local-dir: /home/u744866482/domains/public_html/
