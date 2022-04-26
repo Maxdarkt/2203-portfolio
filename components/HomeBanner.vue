@@ -1,5 +1,7 @@
 <template>
   <div id="home-banner" class="w-screen h-screen grid grid-cols-12 bg-[url('~/assets/images/banner/background-MT.jpg')] bg-center xs:bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover overflow-hidden">
+  <!-- NavBar -->
+   <Navbar class="fixed top-4 right-8 z-0" :animation="animation" @event-scroll-to="scrollDown"/>
     <!-- Block top -->
     <div class="col-span-12 flex flex-col justify-end items-center p-4 pr-8">
       <img src="~/assets/images/banner/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-32 xs:max-h-40 sm:max-h-80 ml-8">
@@ -143,17 +145,20 @@
           elem.classList.add('opacity-100')
         },3500)
       },
-      scrollDown(id: string): void {
-        const element: HTMLElement = document.getElementById(id) as HTMLElement
-        const height: number = element.getBoundingClientRect().top
-        this.$emit('event-scroll-to', height)
-      },
+      // 4/ Fourth animation : display description banner
       displayBannerDescription(): void {
         setTimeout(() => {
           const element = document.getElementById('banner-description') as HTMLElement
           element.classList.remove('translate-y-[100%]')
         }, 1500)
-      }
+      },
+      // clcick Event : ScrollTo 
+      scrollDown(id: string): void {
+        const element: HTMLElement = document.getElementById(id) as HTMLElement
+        const height: number = element.getBoundingClientRect().top
+        this.$emit('event-scroll-to', height)
+        console.log(height)
+      },
     }
   })
 </script>
