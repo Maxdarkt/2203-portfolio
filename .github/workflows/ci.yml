@@ -31,7 +31,7 @@ jobs:
         uses: actions/download-artifact@master
         with: 
           name: dist
-          path: /home/u744866482/public_html/
+          path: ./
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
