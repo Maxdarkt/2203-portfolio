@@ -1,15 +1,15 @@
 <template>
-  <nav class="w-fit flex justify-center items-center space-x-8 text-white font-medium">
-    <nuxt-link :to="{ path: '/',hash:'about-me'}" class="transition duration-500 rounded-xl py-2 px-6 hover:bg-white/70 hover:text-black hover:font-bold">
-      A PROPOS DE MOI
+  <nav class="w-full flex justify-center sm:justify-end items-center space-x-2 xs:space-x-4 sm:space-x-8 text-white font-medium">
+    <nuxt-link :to="{ path: '/',hash:'about-me'}" class="text-xs xs:text-base transition duration-500 rounded-xl py-2 px-2 xs:px-4 sm:px-6 hover:bg-white/70 hover:text-black hover:font-bold">
+      ABOUT ME
     </nuxt-link>
-    <nuxt-link :to="{ path: '/',hash:'skills'}" class="transition duration-500 rounded-xl py-2 px-6 hover:bg-white/70 hover:text-black hover:font-bold">
-      COMPETENCES
+    <nuxt-link :to="{ path: '/',hash:'skills'}" class="text-xs xs:text-base transition duration-500 rounded-xl py-2 px-2 xs:px-4 sm:px-6 hover:bg-white/70 hover:text-black hover:font-bold">
+      SKILLS
     </nuxt-link>
-    <nuxt-link :to="{ path: '/',hash:'portfolio'}" class="transition duration-500 rounded-xl py-2 px-6 hover:bg-white/70 hover:text-black hover:font-bold">
+    <nuxt-link :to="{ path: '/',hash:'portfolio'}" class="text-xs xs:text-base transition duration-500 rounded-xl py-2 px-2 xs:px-4 sm:px-6 hover:bg-white/70 hover:text-black hover:font-bold">
       PORTFOLIO
     </nuxt-link>
-    <nuxt-link :to="{ path: '/',hash:'contact'}" class="transition duration-500 rounded-xl py-2 px-6 hover:bg-white/70 hover:text-black hover:font-bold">
+    <nuxt-link :to="{ path: '/',hash:'contact'}" class="text-xs xs:text-base transition duration-500 rounded-xl py-2 px-2 xs:px-4 sm:px-6 hover:bg-white/70 hover:text-black hover:font-bold">
       CONTACT
     </nuxt-link>
   </nav>

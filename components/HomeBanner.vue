@@ -1,10 +1,10 @@
 <template>
-  <div id="home-banner" class="w-screen h-screen grid grid-cols-12 bg-[url('~/assets/images/banner/background-MT.jpg')] bg-center xs:bg-[center_right_-40rem] sm:bg-center bg-no-repeat bg-cover overflow-hidden">
+  <div id="home-banner" class="w-screen h-screen grid grid-cols-12 bg-[url('~/assets/images/banner/background-MT.jpg')] bg-center bg-no-repeat bg-cover overflow-hidden">
   <!-- NavBar -->
-   <Navbar class="fixed top-4 right-8 z-0" :animation="animation" @event-scroll-to="scrollDown"/>
+   <Navbar class="fixed top-4 sm:right-8 z-0" :animation="animation" @event-scroll-to="scrollDown"/>
     <!-- Block top -->
     <div class="col-span-12 flex flex-col justify-end items-center p-4 pr-8">
-      <img src="~/assets/images/banner/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-32 xs:max-h-40 sm:max-h-80 ml-8">
+      <img src="~/assets/images/banner/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-32 xs:max-h-40 sm:max-h-80 ml-8 mt-8">
     </div><!-- End Block top -->
     <!-- Block bottom -->
     <div class="col-span-12 flex flex-col justify-start items-center p-4">
