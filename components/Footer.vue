@@ -1,5 +1,5 @@
 <template>
-  <section id="footer" class="bg-black/95 p-4">
+  <div id="footer" class="bg-black/95 p-4">
   <div id="contenair-footer" class="flex flex-col justify-center items-center text-white transition duration-700 translate-y-10 opacity-0">
     <div class="transition duration-500 hover:-translate-y-2 cursor-pointer" @click="scrollTop">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -27,7 +27,7 @@
       <strong>&#169;2022 Tourneux Maxence</strong> All Rights Reserved
     </p>
   </div>
-  </section>
+  </div>
 </template>
 
 <script lang='ts'>

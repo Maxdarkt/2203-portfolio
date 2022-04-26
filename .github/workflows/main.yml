@@ -30,7 +30,7 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ftp.mt-develop.com
-          username: u744866482.mt-develop.ch
+          server: ftp.mt-develop.ch
+          username: u744866482
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
