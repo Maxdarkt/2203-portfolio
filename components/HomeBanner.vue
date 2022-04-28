@@ -3,16 +3,16 @@
   <!-- NavBar -->
    <Navbar class="fixed top-4 sm:right-8 z-0" :animation="animation" @event-scroll-to="scrollDown"/>
     <!-- Block top -->
-    <div class="col-span-12 flex flex-col justify-end items-center p-4 pr-8">
-      <img src="~/assets/images/banner/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-32 xs:max-h-40 sm:max-h-80 ml-8 mt-8">
+    <div class="col-span-12 flex justify-center items-end h-[40vh] p-4 pr-8">
+      <img src="~/assets/images/banner/MT_logo_argent_clair_fond_transparent.png" alt="logo" class="max-h-[80%] ml-8">
     </div><!-- End Block top -->
     <!-- Block bottom -->
-    <div class="col-span-12 flex flex-col justify-start items-center p-4">
+    <div class="col-span-12 flex flex-col justify-start items-center h-[35vh] p-4">
       <h1 id="animate-text" class="hidden text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white text-center">
         Tourneux Maxence
       </h1>
       <!-- animation 1 -->
-      <p id="animateText-2" class="xs:text-lg sm:text-xl md:text-xl lg:text-3xl font-bold text-gray-200 mt-8 text-center flex">
+      <p id="animateText-2" class="xs:text-lg sm:text-xl md:text-xl lg:text-3xl font-bold text-gray-200 text-center flex">
         <span class="w-fit position-0 transition duration-700" :class="{'position-1' : animation, 'opacity-0' : !animation}">F</span>
         <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">u</span>
         <span class="w-fit position-0 transition duration-700" :class="{'position-2' : animation, 'opacity-0' : !animation}">l</span>
@@ -51,7 +51,7 @@
       <!-- End animation 3 logos -->
     </div><!-- End Block bottom -->
     <!-- banner opacity -->
-    <div id="banner-description" class="col-span-12 self-end text-white p-4 bg-black/70 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/90 sm:to-black/70 transition duration-[1500ms] translate-y-[100%]">
+    <div id="banner-description" class="col-span-12 self-end text-white p-4 bg-black/70 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/90 sm:to-black/70 transition duration-[1500ms] translate-y-[100%] h-[10vh] sm:h-[25vh]">
       <h2 class="text-sm xs:text-lg font-bold underline underline-offset-4 mb-6">
         En savoir plus
       </h2>
