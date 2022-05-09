@@ -155,6 +155,15 @@
             GIT
           </h4>
         </div><!-- End skills-16 -->
+        <!-- skills-17 -->
+        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
+          <div class="flex justify-center items-center min-h-[6rem]">
+            <img src="~/assets/images/skills/logo_react.png" alt="logo REACT" class="w-12 md:w-16">
+          </div>
+          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
+            REACT
+          </h4>
+        </div><!-- End skills-17 -->
       </div><!-- End card-1 -->
       <!-- -----/-----/----/-----/----/-----/-----/----/-----/----/-----/-----/----/-----/----/----- -->
       <!-- card-2 -->
@@ -271,22 +280,13 @@
         <!-- skills-4 -->
         <div class="col-span-6 sm:col-span-4 flex flex-col justify-between items-center h-full text-center p-4">
           <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_react.png" alt="logo REACT" class="w-12 md:w-16">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            REACT
-          </h4>
-        </div><!-- End skills-4 -->
-        <!-- skills-5 -->
-        <div class="col-span-6 sm:col-span-4 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
             <img src="~/assets/images/skills/logo_react_native.png" alt="logo REACT NATIVE" class="w-14 md:w-20">
           </div>
           <h4 class="text-sm xs:text-lg text-center font-light mb-2">
             REACT NATIVE
           </h4>
-        </div><!-- End skills-5 -->
-        <!-- skills-6 -->
+        </div><!-- End skills-4 -->
+        <!-- skills-5 -->
         <div class="col-span-6 sm:col-span-4 flex flex-col justify-between items-center h-full text-center p-4">
           <div class="flex justify-center items-center min-h-[6rem]">
             <img src="~/assets/images/skills/logo_docker.png" alt="logo DOCKER" class="w-16 md:w-24">
@@ -294,7 +294,7 @@
           <h4 class="text-sm xs:text-lg text-center font-light mb-2">
             DOCKER
           </h4>
-        </div><!-- End skills-6 -->
+        </div><!-- End skills-5 -->
       </div><!-- End card-3 -->
     </div><!-- End contenair-max-width -->
   </section>
