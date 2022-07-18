@@ -11,159 +11,34 @@
         <h4 class="col-span-12 text-lg md:text-xl font-semibold my-4">
           Les technologies utilisées :
         </h4>
-        <!-- skills-1 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_HTML_5.png" alt="logo HTML5" class="w-12 xs:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            HTML5
-          </h4>
-        </div><!-- End skills-1 -->
-        <!-- skills-2 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_CSS_3.png" alt="logo CSS3" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            CSS3
-          </h4>
-        </div><!-- End skills-2 -->
-        <!-- skills-3 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_SASS.png" alt="logo SASS" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            SASS
-          </h4>
-        </div><!-- End skills-3 -->
-        <!-- skills-4 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_tailwindcss.png" alt="logo TailWind CSS" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            TAILWINDCSS
-          </h4>
-        </div><!-- End skills-4 -->
-        <!-- skills-5 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_bootstrap.png" alt="logo Bootstrap" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            BOOTSTRAP
-          </h4>
-        </div><!-- End skills-5 -->
-        <!-- skills-6 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_javascript.png" alt="logo JavaScript" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            JAVASCRIPT
-          </h4>
-        </div><!-- End skills-6 -->
-        <!-- skills-7 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_jquery.png" alt="logo jQuery" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            JQUERY
-          </h4>
-        </div><!-- End skills-7 -->
-        <!-- skills-8 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_VUEJS.png" alt="logo Vue.JS" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            VUE.JS
-          </h4>
-        </div><!-- End skills-8 -->
-        <!-- skills-9 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_NUXTJS.png" alt="logo Nuxt.js" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            NUXT.JS
-          </h4>
-        </div><!-- End skills-9 -->
-        <!-- skills-10 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_NODEJS.png" alt="logo Node.js" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            NODE.JS
-          </h4>
-        </div><!-- End skills-10 -->
-        <!-- skills-11 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_express.png" alt="logo Express.js" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            EXPRESS.JS
-          </h4>
-        </div><!-- End skills-11 -->
-        <!-- skills-12 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_typescript.png" alt="logo TypeScript" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            TYPESCRIPT
-          </h4>
-        </div><!-- End skills-12 -->
-        <!-- skills-13 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_php.png" alt="logo PHP" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            PHP
-          </h4>
-        </div><!-- End skills-13 -->
-        <!-- skills-14 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_MySQL-2.png" alt="logo MySQL" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            MYSQL
-          </h4>
-        </div><!-- End skills-14 -->
-        <!-- skills-15 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_mongoDB.jpg" alt="logo MongoDB" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            MONGODB
-          </h4>
-        </div><!-- End skills-15 -->
-        <!-- skills-16 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_git.png" alt="logo git" class="w-12 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            GIT
-          </h4>
-        </div><!-- End skills-16 -->
-        <!-- skills-17 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_react.png" alt="logo REACT" class="w-12 md:w-16">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            REACT
-          </h4>
-        </div><!-- End skills-17 -->
+        <!-- skills-1-2-3-4 -->
+        <LogoItem logo-name="HTML 5" image-name="logo_HTML_5.png" />
+        <LogoItem logo-name="CSS 3" image-name="logo_CSS_3.png" />
+        <LogoItem logo-name="SASS" image-name="logo_SASS.png" />
+        <LogoItem logo-name="TAILWINDCSS" image-name="logo_tailwindcss.png" />
+        <!-- End skills-1-2-3-4 -->
+        <!-- skills-5-6-7-8 -->
+        <LogoItem logo-name="BOOTSTRAP" image-name="logo_bootstrap.png" />
+        <LogoItem logo-name="JAVASCRIPT" image-name="logo_javascript.png" />
+        <LogoItem logo-name="JQUERY" image-name="logo_jquery.png" />
+        <LogoItem logo-name="VUE.JS" image-name="logo_VUEJS.png" />
+        <!-- End skills-5-6-7-8 -->
+        <!-- skills-9-10-11-12 -->
+        <LogoItem logo-name="NUXT.JS" image-name="logo_NUXTJS.png" />
+        <LogoItem logo-name="NODE.JS" image-name="logo_NODEJS.png" />
+        <LogoItem logo-name="EXPRESS.JS" image-name="logo_express.png" />
+        <LogoItem logo-name="TYPESCRIPT" image-name="logo_typescript.png" />
+        <!-- End skills-9-10-11-12 -->
+        <!-- skills-13-14-15-16 -->
+        <LogoItem logo-name="PHP" image-name="logo_php.png" />
+        <LogoItem logo-name="SYMFONY" image-name="logo_symfony.png" />
+        <LogoItem logo-name="MYSQL" image-name="logo_MySQL-2.png" />
+        <LogoItem logo-name="MONGODB" image-name="logo_mongoDB.jpg" />
+        <!-- End skills-13-14-15-16 -->
+        <!-- skills-17-18 -->
+        <LogoItem logo-name="GIT" image-name="logo_git.png" />
+        <LogoItem logo-name="REACT" image-name="logo_react.png" />
+        <!-- End skills-17-18 -->
       </div><!-- End card-1 -->
       <!-- -----/-----/----/-----/----/-----/-----/----/-----/----/-----/-----/----/-----/----/----- -->
       <!-- card-2 -->
@@ -171,78 +46,17 @@
         <h4 class="col-span-12 text-lg md:text-xl font-semibold my-4">
           Logiciels :
         </h4>
-        <!-- skills-1 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_ubuntu.png" alt="logo Ubuntu" class="w-14 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            UBUNTU
-          </h4>
-        </div><!-- End skills-1 -->
-        <!-- skills-2 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_jira.png" alt="logo JIRA" class="w-16 md:w-24">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            JIRA
-          </h4>
-        </div><!-- End skills-2 -->
-        <!-- skills-3 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_figma.png" alt="logo FIGMA" class="w-10 md:w-14">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            FIGMA
-          </h4>
-        </div><!-- End skills-3 -->
-        <!-- skills-4 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_gimp.png" alt="logo GIMP" class="w-14 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            GIMP
-          </h4>
-        </div><!-- End skills-4 -->
-        <!-- skills-5 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_github.png" alt="logo github" class="w-12 md:w-16">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            GITHUB
-          </h4>
-        </div><!-- End skills-5 -->
-        <!-- skills-6 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_heroku.png" alt="logo HEROKU" class="w-14 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            HEROKU
-          </h4>
-        </div><!-- End skills-6 -->
-        <!-- skills-7 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_vercel.png" alt="logo VERCEL" class="w-14 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            VERCEL
-          </h4>
-        </div><!-- End skills-7 -->
-        <!-- skills-8 -->
-        <div class="col-span-6 xs:col-span-4 sm:col-span-3 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_netlify.png" alt="logo NETLIFY" class="w-14 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            NETLIFY
-          </h4>
-        </div><!-- End skills-8 -->
+        <!-- skills-1-2-3-4 -->
+        <LogoItem logo-name="UBUNTU" image-name="logo_ubuntu.png" />
+        <LogoItem logo-name="JIRA" image-name="logo_jira.png" />
+        <LogoItem logo-name="FIGMA" image-name="logo_figma.png" />
+        <LogoItem logo-name="GIMP" image-name="logo_gimp.png" />
+        <!-- End skills-1-2-3-4 -->
+        <!-- skills-5-6-7 -->
+        <LogoItem logo-name="HEROKU" image-name="logo_heroku.png" />
+        <LogoItem logo-name="VERCEL" image-name="logo_vercel.png" />
+        <LogoItem logo-name="NETLIFY" image-name="logo_netlify.png" />
+        <!-- End skills-5-6-7 -->
       </div><!-- End card-2 -->
       <!-- -----/-----/----/-----/----/-----/-----/----/-----/----/-----/-----/----/-----/----/----- -->
       <!-- card-3 -->
@@ -250,51 +64,12 @@
         <h4 class="col-span-12 text-lg md:text-xl font-semibold my-4">
           En cours d'apprentissage :
         </h4>
-        <!-- skills-1 -->
-        <div class="col-span-6 sm:col-span-4 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_java.png" alt="logo JAVA" class="w-14 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            JAVA
-          </h4>
-        </div><!-- End skills-1 -->
-        <!-- skills-2 -->
-        <div class="col-span-6 sm:col-span-4 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_spring.jpg" alt="logo SPRING" class="w-14 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            SPRING
-          </h4>
-        </div><!-- End skills-2 -->
-        <!-- skills-3 -->
-        <div class="col-span-6 sm:col-span-4 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_spring_boot.png" alt="logo SPRING BOOT" class="w-12 md:w-16">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            SPRING BOOT
-          </h4>
-        </div><!-- End skills-3 -->
-        <!-- skills-4 -->
-        <div class="col-span-6 sm:col-span-4 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_react_native.png" alt="logo REACT NATIVE" class="w-14 md:w-20">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            REACT NATIVE
-          </h4>
-        </div><!-- End skills-4 -->
-        <!-- skills-5 -->
-        <div class="col-span-6 sm:col-span-4 flex flex-col justify-between items-center h-full text-center p-4">
-          <div class="flex justify-center items-center min-h-[6rem]">
-            <img src="~/assets/images/skills/logo_docker.png" alt="logo DOCKER" class="w-16 md:w-24">
-          </div>
-          <h4 class="text-sm xs:text-lg text-center font-light mb-2">
-            DOCKER
-          </h4>
-        </div><!-- End skills-5 -->
+        <!-- skills-5-6-7-8 -->
+        <LogoItem logo-name="REACT NATIVE" image-name="logo_react_native.png" />
+        <LogoItem logo-name="DOCKER" image-name="logo_docker.png" />
+        <LogoItem logo-name="PYTHON" image-name="logo_python.png" />
+        <LogoItem logo-name="DJANGO" image-name="logo_django.jpg" />
+        <!-- End skills-5-6-7-8 -->
       </div><!-- End card-3 -->
     </div><!-- End contenair-max-width -->
   </section>
@@ -302,9 +77,13 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import LogoItem from '~/components/UI/LogoItem.vue'
 
 export default Vue.extend({
   name: 'Skills',
+  components: {
+    LogoItem
+  },
   props: {
     animation: {
       type: Boolean,
