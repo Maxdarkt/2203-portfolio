@@ -36,8 +36,8 @@
           <label for="message" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">Votre message</label>
         </div>
         <div class="flex justify-center items-center space-x-8">
-          <button type="submit" class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" :class="{'disabled bg-gray-300' : !validatefields, 'bg-gray-700 transition duration-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300' : validatefields}" @click.prevent="sendEmail">Envoyer</button>
           <button type="reset" class="bg-gray-700 transition duration-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" @click.prevent="resetForm">Effacer</button>
+          <button type="submit" class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" :class="{'disabled bg-gray-300' : !validatefields, 'bg-gray-700 transition duration-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300' : validatefields}" @click.prevent="sendEmail">Envoyer</button>
         </div>
         <div id="alert-form" class="text-lg text-center py-2 my-4 transition duration-700 opacity-0">
           {{ alertForm }}
@@ -126,7 +126,8 @@ export default Vue.extend({
         firstName: this.firstName,
         mobile: this.mobile,
         company: this.company,
-        message: this.message
+        message: this.message,
+        to: 'maxence@mt-develop.ch'
       })
       .then(response => {
         if(response.code === 200) {

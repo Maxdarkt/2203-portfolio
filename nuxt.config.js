@@ -90,7 +90,7 @@ export default {
   ],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: development ? 'http://127.0.0.1/portfolio-api/api/' : 'https://mt-develop.com/api',
+    baseURL: development ? 'http://127.0.0.1:3000/api/' : 'https://mt-develop.com/api',
     headers: {
         common: {
           'Accept': 'application/json, text/plain, */*'
