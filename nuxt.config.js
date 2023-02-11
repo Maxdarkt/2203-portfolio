@@ -59,14 +59,14 @@ export default {
 
       return { x: 0, y: 0 }
     },
-    // extendRoutes(routes, resolve) {
-    //   routes.push(
-    //   {
-    //     name: 'notFound',
-    //     path: '/*',
-    //     component: resolve(__dirname, 'pages/404.vue')
-    //   })
-    // },
+    extendRoutes(routes, resolve) {
+      routes.push(
+      {
+        name: 'notFound',
+        path: '/*',
+        component: resolve(__dirname, 'pages/404.vue')
+      })
+    },
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/css/style.css'],
